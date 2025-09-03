@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Shield, Clock, Star } from 'lucide-react'
+import { Shield, Clock, Star } from 'lucide-react'
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -101,35 +101,12 @@ const Hero = () => {
               onClick={scrollToContact}
               className="bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-xl"
             >
-              Demander un devis gratuit
+              Enregistrement
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={scrollToServices}
-              className="bg-white/20 border-2 border-white/40 text-white hover:bg-white/30 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto backdrop-blur-sm"
-            >
-              Découvrir nos services
-            </motion.button>
+
           </motion.div>
 
-          {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.button
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              onClick={scrollToServices}
-              className="flex flex-col items-center space-y-1 sm:space-y-2 text-white/80 hover:text-white transition-colors"
-            >
-              <span className="text-xs sm:text-sm">Découvrir</span>
-              <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5" />
-            </motion.button>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>

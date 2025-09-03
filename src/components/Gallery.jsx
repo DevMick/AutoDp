@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Star, Quote, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -39,26 +39,7 @@ const Gallery = () => {
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'Marie Dubois',
-      rating: 5,
-      text: 'Service exceptionnel ! Mon véhicule a été réparé rapidement et à un prix très correct. Je recommande vivement Auto DP.',
-      service: 'Réparation moteur'
-    },
-    {
-      name: 'Pierre Martin',
-      rating: 5,
-      text: 'Remorquage effectué en moins de 30 minutes un dimanche soir. Équipe très professionnelle et tarifs transparents.',
-      service: 'Remorquage 24/7'
-    },
-    {
-      name: 'Sophie Laurent',
-      rating: 5,
-      text: 'Rachat de ma voiture effectué sans stress. Évaluation honnête et paiement immédiat. Très satisfaite !',
-      service: 'Rachat véhicule'
-    }
-  ]
+
 
   const openModal = (index) => {
     setSelectedImage(images[index])
@@ -133,56 +114,7 @@ const Gallery = () => {
           ))}
         </motion.div>
 
-        {/* Testimonials */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
-            Ce que disent nos clients
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100"
-              >
-                <div className="flex items-center mb-3 sm:mb-4">
-                  <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 mr-2 sm:mr-3" />
-                  <div className="flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                
-                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
-                
-                <div className="border-t border-gray-200 pt-3 sm:pt-4">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
-                      <p className="text-xs sm:text-sm text-primary-600 font-medium">{testimonial.service}</p>
-                    </div>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-lg">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
 
       {/* Modal */}

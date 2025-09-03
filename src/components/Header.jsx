@@ -18,8 +18,6 @@ const Header = () => {
     { name: 'Accueil', href: '#accueil' },
     { name: 'Services', href: '#services' },
     { name: 'Galerie', href: '#galerie' },
-    { name: 'À propos', href: '#apropos' },
-    { name: 'Contact', href: '#contact' },
   ]
 
   const scrollToSection = (href) => {
@@ -84,7 +82,7 @@ const Header = () => {
               onClick={() => scrollToSection('#contact')}
               className="bg-primary-600 hover:bg-primary-700 text-white px-3 sm:px-4 lg:px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm lg:text-base"
             >
-              <span className="hidden sm:inline">Devis gratuit</span>
+              <span className="hidden sm:inline">Enregistrement</span>
               <span className="sm:hidden">Contact</span>
             </motion.button>
           </div>
@@ -125,7 +123,7 @@ const Header = () => {
                   onClick={() => scrollToSection('#contact')}
                   className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full text-sm sm:text-base"
                 >
-                  Devis gratuit
+                  Enregistrement
                 </button>
               </div>
             </nav>

@@ -27,7 +27,7 @@ const Footer = () => {
     { name: 'Accueil', href: '#accueil' },
     { name: 'Services', href: '#services' },
     { name: 'Galerie', href: '#galerie' },
-    { name: 'À propos', href: '#apropos' },
+    
     { name: 'Contact', href: '#contact' }
   ]
 
