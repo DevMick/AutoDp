@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Wrench, Truck, DollarSign } from 'lucide-react'
+import { Wrench, Truck, DollarSign, Clock, Star, Shield } from 'lucide-react'
 
 const Services = () => {
   const services = [
@@ -29,7 +29,11 @@ const Services = () => {
     }
   ]
 
-
+  const stats = [
+    { number: '24/7', label: 'Service disponible', icon: Clock },
+    { number: '500+', label: 'Clients satisfaits', icon: Star },
+    { number: '100%', label: 'Garantie qualité', icon: Shield }
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -119,6 +123,38 @@ const Services = () => {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-primary-600 to-blue-600 rounded-2xl p-6 sm:p-8 lg:p-12 mt-12 lg:mt-16"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center text-white">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center"
+              >
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-sm sm:text-base text-white/90">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
 

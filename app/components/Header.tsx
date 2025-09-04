@@ -18,6 +18,8 @@ const Header = () => {
   const menuItems = [
     { name: 'Accueil', id: 'accueil' },
     { name: 'Services', id: 'services' },
+    { name: 'Témoignages', id: 'testimonials' },
+    { name: 'Galerie', id: 'galerie' },
     { name: 'Enregistrement', id: 'contact' },
     { name: 'Réception de Fond', id: 'fund-reception' },
   ]

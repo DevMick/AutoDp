@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Wrench, Clock, Star, Shield } from 'lucide-react'
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -16,8 +17,14 @@ const Hero = () => {
     document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const stats = [
+    { number: '24/7', label: 'Service disponible', icon: Clock },
+    { number: '500+', label: 'Clients satisfaits', icon: Star },
+    { number: '100%', label: 'Garantie qualité', icon: Shield }
+  ]
+
   return (
-    <section id="accueil" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-dark-900/80 via-dark-800/70 to-primary-900/60 z-10"></div>
@@ -33,16 +40,28 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
         >
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 mb-8"
+          >
+            <Wrench className="w-5 h-5 text-primary-400 mr-2" />
+            <span className="text-white font-medium">Garage & Remorquage Professionnel</span>
+          </motion.div>
+
           {/* Titre principal */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="text-white">Auto DP</span>
+            Auto <span className="bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">DP</span>
           </motion.h1>
 
           {/* Sous-titre */}
@@ -50,9 +69,20 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg sm:text-xl text-gray-200 mb-8 max-w-xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 max-w-3xl mx-auto leading-relaxed"
           >
-            Garage, Remorquage 24/7 et Achat de véhicules
+            Votre partenaire de confiance pour tous vos besoins automobiles en Belgique
+          </motion.p>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto"
+          >
+            Services de garage professionnel, remorquage 24/7, et achat de véhicules pour particuliers.
+            Une équipe expérimentée à votre service depuis plus de 10 ans.
           </motion.p>
 
           {/* Boutons CTA */}
@@ -60,13 +90,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-primary-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
             >
               Enregistrement
             </motion.button>
@@ -75,11 +105,47 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToFundReception}
-              className="bg-white/20 border-2 border-white/40 text-white hover:bg-white/30 px-8 py-3 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm"
+              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 w-full sm:w-auto"
             >
               Réception de Fond
             </motion.button>
 
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToServices}
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 w-full sm:w-auto"
+            >
+              Nos Services
+            </motion.button>
+          </motion.div>
+
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
+                  <stat.icon className="w-8 h-8 text-primary-400" />
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-sm sm:text-base text-gray-300">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
 
         </motion.div>
