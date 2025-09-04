@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Wrench, Truck, DollarSign, Clock, Shield, Star, Settings, Zap, Car } from 'lucide-react'
+import { Wrench, Truck, DollarSign, Shield, Star, Settings, Zap, Car } from 'lucide-react'
 
 const Services = () => {
   const services = [
@@ -155,42 +155,6 @@ const Services = () => {
           ))}
         </motion.div>
 
-        {/* Bottom CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-12 sm:mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-primary-600 to-blue-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-12 text-white mx-4 sm:mx-0">
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 sm:space-y-6 lg:space-y-0 lg:space-x-8">
-              <div className="text-center lg:text-left">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">
-                  Besoin d'une intervention ?
-                </h3>
-                <p className="text-primary-100 text-sm sm:text-base lg:text-lg">
-                  Contactez-nous pour un devis gratuit et sans engagement
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto">
-                <div className="flex items-center justify-center space-x-2 bg-white/20 rounded-lg px-3 sm:px-4 py-2 text-sm sm:text-base">
-                  <Clock className="w-5 h-5" />
-                  <span className="font-semibold">Réponse rapide</span>
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white text-primary-600 hover:bg-gray-50 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base w-full sm:w-auto"
-                >
-                  Demander un devis
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
