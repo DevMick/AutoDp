@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Car, Phone } from 'lucide-react'
+import { Menu, X, Car } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,17 +14,17 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: 'Accueil', href: '#accueil' },
-    { name: 'Services', href: '#services' },
-    { name: 'Galerie', href: '#galerie' },
-  ]
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+    setIsMenuOpen(false)
+  }
+
+  const scrollToFundReception = () => {
+    document.querySelector('#fund-reception').scrollIntoView({ behavior: 'smooth' })
     setIsMenuOpen(false)
   }
 
@@ -55,36 +55,29 @@ const Header = () => {
             </div>
           </motion.div>
 
-          {/* Navigation Desktop */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-            {navItems.map((item) => (
+
+          {/* CTA Buttons Desktop */}
+          <div className="hidden sm:flex items-center space-x-2 lg:space-x-4">
+            <div className="flex space-x-2">
               <motion.button
-                key={item.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 text-sm xl:text-base px-2 py-1"
+                onClick={() => scrollToSection('#contact')}
+                className="bg-primary-600 hover:bg-primary-700 text-white px-3 sm:px-4 lg:px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm lg:text-base"
               >
-                {item.name}
+                <span className="hidden sm:inline">Enregistrement</span>
+                <span className="sm:hidden">Contact</span>
               </motion.button>
-            ))}
-          </nav>
-
-          {/* CTA Button Desktop */}
-          <div className="hidden sm:flex items-center space-x-2 lg:space-x-4">
-            <div className="hidden lg:flex items-center space-x-2 text-primary-600">
-              <Phone className="w-4 h-4" />
-              <span className="font-semibold text-sm">24/7</span>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToFundReception}
+                className="bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 px-3 sm:px-4 lg:px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm lg:text-base"
+              >
+                <span className="hidden lg:inline">Réception de fond</span>
+                <span className="lg:hidden">Fond</span>
+              </motion.button>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('#contact')}
-              className="bg-primary-600 hover:bg-primary-700 text-white px-3 sm:px-4 lg:px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm lg:text-base"
-            >
-              <span className="hidden sm:inline">Enregistrement</span>
-              <span className="sm:hidden">Contact</span>
-            </motion.button>
           </div>
 
           {/* Menu Mobile */}
@@ -108,25 +101,20 @@ const Header = () => {
             exit={{ opacity: 0, y: -20 }}
             className="sm:hidden bg-white border-t border-gray-200 py-3 sm:py-4"
           >
-            <nav className="flex flex-col space-y-2 sm:space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left py-2 px-4 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-all duration-200 text-sm sm:text-base"
-                >
-                  {item.name}
-                </button>
-              ))}
-              <div className="px-4 pt-3 sm:pt-4 border-t border-gray-200">
-                <button
-                  onClick={() => scrollToSection('#contact')}
-                  className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full text-sm sm:text-base"
-                >
-                  Enregistrement
-                </button>
-              </div>
-            </nav>
+            <div className="px-4 space-y-3">
+              <button
+                onClick={() => scrollToSection('#contact')}
+                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full text-sm sm:text-base"
+              >
+                Enregistrement
+              </button>
+              <button
+                onClick={scrollToFundReception}
+                className="bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full text-sm sm:text-base"
+              >
+                Formulaire de réception de fond
+              </button>
+            </div>
           </motion.div>
         )}
       </div>

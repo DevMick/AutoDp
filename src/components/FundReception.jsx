@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 import { EMAILJS_CONFIG, validateEmailJSConfig } from '../config/emailjs.js'
 import '../config/emailjs-test.js' // Test de la configuration
 
-const Contact = () => {
+const FundReception = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
@@ -35,12 +35,12 @@ const Contact = () => {
         date_expiration: data.date_expiration,
         submission_id: data.submission_id,
         amount: `${data.montant} €`,
-        message: 'Formulaire d\'enregistrement',
+        message: 'Formulaire de réception de fond',
         to_name: 'Mickael Andjui',
         to_email: 'mickael.andjui.21@gmail.com',
         reply_to: data.email,
         // Informations supplémentaires pour le template
-        service_type: 'Enregistrement',
+        service_type: 'Réception de fond',
         date_demande: new Date().toLocaleDateString('fr-FR'),
         heure_demande: new Date().toLocaleTimeString('fr-FR')
       }
@@ -85,7 +85,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gray-50">
+    <section id="fund-reception" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Header */}
         <motion.div
@@ -95,13 +95,13 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-             <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Enregistrement</span>
-           </h2>
-           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-             Remplissez ce formulaire pour vous enregistrer. 
-             Nous traiterons votre demande dans les plus brefs délais.
-           </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulaire de réception de fond</span>
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
+            Remplissez ce formulaire pour enregistrer votre demande de réception de fond. 
+            Nous traiterons votre demande dans les plus brefs délais.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
@@ -114,9 +114,9 @@ const Contact = () => {
             className="space-y-6 sm:space-y-8"
           >
             <div>
-                             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-                 Informations importantes
-               </h3>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
+                Informations importantes
+              </h3>
               
               <div className="grid gap-6">
                 {contactInfo.map((item, index) => (
@@ -126,7 +126,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
                     <div className="bg-primary-100 p-3 rounded-lg">
                       <item.icon className="w-6 h-6 text-primary-600" />
@@ -147,16 +147,16 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-red-500 to-orange-500 rounded-xl p-6 text-white"
+              className="bg-gradient-to-r from-green-500 to-blue-500 rounded-xl p-6 text-white"
             >
               <h4 className="text-xl font-bold mb-2 flex items-center">
                 <Phone className="w-6 h-6 mr-2" />
-                Urgence Remorquage
+                Réception de fond
               </h4>
-                             <p className="text-red-100 mb-4">
-                 Panne, accident ou problème mécanique ? Nous intervenons 24h/24 et 7j/7 partout en Belgique.
-               </p>
-              
+              <p className="text-green-100 mb-4">
+                Traitement rapide et sécurisé de vos demandes de réception de fond. 
+                Service disponible 24h/24 et 7j/7.
+              </p>
             </motion.div>
           </motion.div>
 
@@ -169,7 +169,7 @@ const Contact = () => {
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8"
           >
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Formulaire d'enregistrement
+              Formulaire de réception de fond
             </h3>
 
             {isSubmitted && (
@@ -180,8 +180,8 @@ const Contact = () => {
               >
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <div>
-                  <h4 className="font-semibold text-green-800">Message envoyé !</h4>
-                  <p className="text-green-700 text-sm">Votre enregistrement a été effectué avec succès.</p>
+                  <h4 className="font-semibold text-green-800">Demande envoyée !</h4>
+                  <p className="text-green-700 text-sm">Votre demande de réception de fond a été enregistrée avec succès.</p>
                 </div>
               </motion.div>
             )}
@@ -400,8 +400,6 @@ const Contact = () => {
                 </div>
               </div>
 
-
-
               {/* Submit Button */}
               <motion.button
                 type="submit"
@@ -422,7 +420,7 @@ const Contact = () => {
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Enregistrer</span>
+                    <span>Envoyer la demande</span>
                   </>
                 )}
               </motion.button>
@@ -438,4 +436,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default FundReception

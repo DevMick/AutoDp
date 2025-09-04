@@ -5,6 +5,7 @@ import Services from './components/Services'
 import Gallery from './components/Gallery'
 
 import Contact from './components/Contact'
+import FundReception from './components/FundReception'
 import Footer from './components/Footer'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Gallery />
 
         <Contact />
+        <FundReception />
       </main>
       <Footer />
     </div>

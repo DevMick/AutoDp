@@ -7,6 +7,10 @@ const Hero = () => {
     document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
   }
 
+  const scrollToFundReception = () => {
+    document.querySelector('#fund-reception').scrollIntoView({ behavior: 'smooth' })
+  }
+
   const scrollToServices = () => {
     document.querySelector('#services').scrollIntoView({ behavior: 'smooth' })
   }
@@ -102,6 +106,15 @@ const Hero = () => {
               className="bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-xl"
             >
               Enregistrement
+            </motion.button>
+            
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToFundReception}
+              className="bg-white/20 border-2 border-white/40 text-white hover:bg-white/30 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto backdrop-blur-sm"
+            >
+              Formulaire de réception de fond
             </motion.button>
 
           </motion.div>
