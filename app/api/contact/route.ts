@@ -285,9 +285,13 @@ export async function POST(request: NextRequest) {
       : `Nouvelle demande de réception de fond - ${body.nom_complet}`
 
     // Configuration de l'email
+    const recipients = process.env.EMAIL_RECIPIENTS
+      ? process.env.EMAIL_RECIPIENTS.split(',').map(email => email.trim())
+      : ['registratie@autodp.org', 'mickael.andjui.21@gmail.com']
+
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'registratie@autodp.org',
+      to: recipients,
       replyTo: body.email,
       subject: subject,
       html: emailHtml,
