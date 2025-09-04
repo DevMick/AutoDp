@@ -8,7 +8,7 @@ import Image from 'next/image'
 const Gallery = () => {
   const images = [
     {
-      src: '/Image 1.jpg',
+      src: '/Atelier Professionnel.jpg',
       alt: 'Auto DP - Atelier de réparation moderne',
       title: 'Atelier Professionnel',
       description: 'Notre atelier équipé des dernières technologies pour tous types de réparations',
