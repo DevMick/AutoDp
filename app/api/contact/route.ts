@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 // Configuration du transporteur SMTP OVH
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST || 'ssl0.ovh.net',
   port: parseInt(process.env.EMAIL_PORT || '465'),
   secure: true, // true pour le port 465, false pour les autres ports

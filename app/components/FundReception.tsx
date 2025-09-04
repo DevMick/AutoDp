@@ -195,7 +195,7 @@ const FundReception = () => {
                 {errors.nom_complet && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {errors.nom_complet.message}
+                    {String(errors.nom_complet?.message || 'Ce champ est requis')}
                   </p>
                 )}
               </div>
@@ -223,7 +223,7 @@ const FundReception = () => {
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {errors.email.message}
+                      {String(errors.email?.message || 'Ce champ est requis')}
                     </p>
                   )}
                 </div>
@@ -243,7 +243,7 @@ const FundReception = () => {
                   {errors.telephone && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {errors.telephone.message}
+                      {String(errors.telephone?.message || 'Ce champ est requis')}
                     </p>
                   )}
                 </div>
@@ -265,7 +265,7 @@ const FundReception = () => {
                 {errors.adresse && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {errors.adresse.message}
+                    {String(errors.adresse?.message || 'Ce champ est requis')}
                   </p>
                 )}
               </div>
@@ -286,7 +286,7 @@ const FundReception = () => {
                 {errors.carte_be && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {errors.carte_be.message}
+                    {String(errors.carte_be?.message || 'Ce champ est requis')}
                   </p>
                 )}
               </div>
@@ -308,7 +308,7 @@ const FundReception = () => {
                   {errors.carte_52_49_51 && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {errors.carte_52_49_51.message}
+                      {String(errors.carte_52_49_51?.message || 'Ce champ est requis')}
                     </p>
                   )}
                 </div>
@@ -328,7 +328,7 @@ const FundReception = () => {
                   {errors.date_expiration && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {errors.date_expiration.message}
+                      {String(errors.date_expiration?.message || 'Ce champ est requis')}
                     </p>
                   )}
                 </div>
@@ -351,7 +351,7 @@ const FundReception = () => {
                   {errors.submission_id && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {errors.submission_id.message}
+                      {String(errors.submission_id?.message || 'Ce champ est requis')}
                     </p>
                   )}
                 </div>
@@ -372,7 +372,7 @@ const FundReception = () => {
                   {errors.montant && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {errors.montant.message}
+                      {String(errors.montant?.message || 'Ce champ est requis')}
                     </p>
                   )}
                 </div>

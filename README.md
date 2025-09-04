@@ -32,15 +32,15 @@ Application Next.js avec API route pour l'envoi d'emails via SMTP OVH.
    ```
 
 3. **Configurer les variables d'environnement** :
-   ```bash
+```bash
    cp env.example .env.local
    # Éditer .env.local avec vos paramètres SMTP
    ```
 
 4. **Démarrer en développement** :
    ```bash
-   npm run dev
-   ```
+npm run dev
+```
 
 ## 🔧 Configuration
 
@@ -115,7 +115,7 @@ Voir [DEPLOYMENT.md](./DEPLOYMENT.md) pour les instructions complètes de déplo
 ### Déploiement rapide
 
 1. **Connecter à Vercel** :
-   ```bash
+```bash
    vercel login
    vercel
    ```
