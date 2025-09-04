@@ -24,7 +24,7 @@ const Gallery = () => {
       icon: Truck
     },
     {
-      src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      src: '/Image 1.jpg',
       alt: 'Auto DP - Diagnostic automobile',
       title: 'Diagnostic Avancé',
       description: 'Équipements de diagnostic de pointe pour identifier précisément les problèmes',
@@ -32,7 +32,7 @@ const Gallery = () => {
       icon: Wrench
     },
     {
-      src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      src: '/Image 2.jpg',
       alt: 'Auto DP - Véhicules rachetés',
       title: 'Achat de Véhicules',
       description: 'Nous rachetons vos véhicules au meilleur prix, évaluation gratuite',
@@ -40,7 +40,7 @@ const Gallery = () => {
       icon: Car
     },
     {
-      src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      src: '/Image 1.jpg',
       alt: 'Auto DP - Réparation moteur',
       title: 'Réparation Moteur',
       description: 'Spécialistes en réparation et révision de moteurs toutes marques',
@@ -48,7 +48,7 @@ const Gallery = () => {
       icon: Wrench
     },
     {
-      src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      src: '/Image 2.jpg',
       alt: 'Auto DP - Équipe professionnelle',
       title: 'Équipe Experte',
       description: 'Une équipe de mécaniciens qualifiés avec plus de 10 ans d\'expérience',
