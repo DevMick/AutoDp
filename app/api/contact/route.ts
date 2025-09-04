@@ -241,7 +241,7 @@ function createEmailTemplate(data: any, formType: string) {
 
         <div class="footer">
           <p>
-            <strong>AutoDP</strong> - Garage & Remorquage 24/7<br>
+            <strong>Auto DP</strong> - Garage & Remorquage 24/7<br>
             Email envoyé automatiquement depuis <strong>autodp.org</strong><br>
             Pour toute question, contactez le support technique.
           </p>
@@ -287,7 +287,7 @@ export async function POST(request: NextRequest) {
     // Configuration de l'email
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECIPIENT_EMAIL || 'registratie@autodp.org',
+      to: 'registratie@autodp.org',
       replyTo: body.email,
       subject: subject,
       html: emailHtml,
