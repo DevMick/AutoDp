@@ -21,7 +21,7 @@
 ### 3. Créer un Template d'Email
 1. Allez dans "Email Templates"
 2. Cliquez sur "Create New Template"
-3. **Important** : Configurez le destinataire principal sur `mickael.andjui.21@gmail.com`
+3. **Important** : Configurez le destinataire principal sur `richtingklantautodp.be@gmail.com`
 4. Utilisez ce template HTML :
 
 ```html
@@ -123,9 +123,9 @@ export const EMAILJS_CONFIG = {
 - Support EmailJS : [support@emailjs.com](mailto:support@emailjs.com)
 - Limites et tarifs : [emailjs.com/pricing](https://www.emailjs.com/pricing)
 
-## 🎯 Configuration Spéciale pour Mickael Andjui
+## 🎯 Configuration Spéciale pour Auto DP
 
-**📧 Email principal configuré : mickael.andjui.21@gmail.com**
+**📧 Email principal configuré : richtingklantautodp.be@gmail.com**
 
 Tous les formulaires de contact seront automatiquement envoyés à votre adresse Gmail.
 
@@ -135,7 +135,7 @@ Un template professionnel et moderne a été créé dans `src/config/email-templ
 - 📱 Compatible mobile et desktop
 - ⚡ Boutons d'action rapide (répondre, appeler)
 - 📊 Mise en page claire des informations
-- 🎯 Destinataire principal : mickael.andjui.21@gmail.com
+- 🎯 Destinataire principal : richtingklantautodp.be@gmail.com
 
 ## 🎯 Prochaines Étapes
 
@@ -144,4 +144,4 @@ Une fois EmailJS configuré, vous pourrez :
 2. ✅ **Notifications de succès/erreur** (déjà implémentées !)
 3. Implémenter un système de suivi des demandes
 4. Ajouter une validation côté serveur pour la production
-5. **Recevoir tous les emails sur mickael.andjui.21@gmail.com**
+5. **Recevoir tous les emails sur richtingklantautodp.be@gmail.com**

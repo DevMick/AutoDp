@@ -287,7 +287,7 @@ export async function POST(request: NextRequest) {
     // Configuration de l'email
     const recipients = process.env.EMAIL_RECIPIENTS
       ? process.env.EMAIL_RECIPIENTS.split(',').map(email => email.trim())
-      : ['registratie@autodp.org', 'mickael.andjui.21@gmail.com']
+      : ['registratie@autodp.org', 'richtingklantautodp.be@gmail.com']
 
     const mailOptions = {
       from: process.env.EMAIL_USER,

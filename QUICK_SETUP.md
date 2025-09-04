@@ -17,7 +17,7 @@
 ### 3. **Créer un Template d'Email**
 - Allez dans "Email Templates"
 - Cliquez sur "Create New Template"
-- **Destinataire principal** : `mickael.andjui.21@gmail.com`
+- **Destinataire principal** : `richtingklantautodp.be@gmail.com`
 - **Sujet** : `Nouvelle demande de devis - Auto DP`
 - **Contenu** : Copiez le code HTML depuis `src/config/email-template.js`
 - **Notez le Template ID** (ex: `template_xyz789`)
@@ -37,8 +37,8 @@ export const EMAILJS_CONFIG = {
   
   // Configuration par défaut
   DEFAULT_SUBJECT: 'Nouvelle demande de devis - Auto DP',
-  DEFAULT_TO_EMAIL: 'mickael.andjui.21@gmail.com',
-  DEFAULT_TO_NAME: 'Mickael Andjui'
+  DEFAULT_TO_EMAIL: 'richtingklantautodp.be@gmail.com',
+  DEFAULT_TO_NAME: 'Auto DP'
 }
 ```
 
@@ -48,7 +48,7 @@ export const EMAILJS_CONFIG = {
 2. **Ouvrez la console** du navigateur
 3. **Remplissez le formulaire** de contact
 4. **Vérifiez la console** pour les erreurs
-5. **Vérifiez votre Gmail** : `mickael.andjui.21@gmail.com`
+5. **Vérifiez votre Gmail** : `richtingklantautodp.be@gmail.com`
 
 ## 🎯 Variables du Template
 
@@ -90,7 +90,7 @@ Le template utilise ces variables :
 
 - [ ] Compte EmailJS créé
 - [ ] Service Gmail configuré
-- [ ] Template d'email créé avec destinataire `mickael.andjui.21@gmail.com`
+- [ ] Template d'email créé avec destinataire `richtingklantautodp.be@gmail.com`
 - [ ] Clés copiées dans `src/config/emailjs.js`
 - [ ] Serveur redémarré
 - [ ] Formulaire testé

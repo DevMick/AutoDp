@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Wrench, Clock, Star, Shield } from 'lucide-react'
+import { Wrench } from 'lucide-react'
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -13,15 +13,9 @@ const Hero = () => {
     document.querySelector('#fund-reception')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const scrollToServices = () => {
-    document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })
-  }
 
-  const stats = [
-    { number: '24/7', label: 'Service disponible', icon: Clock },
-    { number: '500+', label: 'Clients satisfaits', icon: Star },
-    { number: '100%', label: 'Garantie qualité', icon: Shield }
-  ]
+
+
 
   return (
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -109,43 +103,6 @@ const Hero = () => {
             >
               Réception de Fond
             </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={scrollToServices}
-              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 w-full sm:w-auto"
-            >
-              Nos Services
-            </motion.button>
-          </motion.div>
-
-          {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
-                  <stat.icon className="w-8 h-8 text-primary-400" />
-                </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm sm:text-base text-gray-300">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
 
         </motion.div>

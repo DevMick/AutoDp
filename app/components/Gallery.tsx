@@ -24,7 +24,7 @@ const Gallery = () => {
       icon: Truck
     },
     {
-      src: '/Image 1.jpg',
+      src: '/Diagnostic Avancé.jpg',
       alt: 'Auto DP - Diagnostic automobile',
       title: 'Diagnostic Avancé',
       description: 'Équipements de diagnostic de pointe pour identifier précisément les problèmes',
@@ -32,7 +32,7 @@ const Gallery = () => {
       icon: Wrench
     },
     {
-      src: '/Image 2.jpg',
+      src: '/Achat de Véhicules.jpg',
       alt: 'Auto DP - Véhicules rachetés',
       title: 'Achat de Véhicules',
       description: 'Nous rachetons vos véhicules au meilleur prix, évaluation gratuite',
@@ -40,7 +40,7 @@ const Gallery = () => {
       icon: Car
     },
     {
-      src: '/Image 1.jpg',
+      src: '/Réparation Moteur.jpg',
       alt: 'Auto DP - Réparation moteur',
       title: 'Réparation Moteur',
       description: 'Spécialistes en réparation et révision de moteurs toutes marques',
@@ -48,7 +48,7 @@ const Gallery = () => {
       icon: Wrench
     },
     {
-      src: '/Image 2.jpg',
+      src: '/Équipe Experte.jpg',
       alt: 'Auto DP - Équipe professionnelle',
       title: 'Équipe Experte',
       description: 'Une équipe de mécaniciens qualifiés avec plus de 10 ans d\'expérience',

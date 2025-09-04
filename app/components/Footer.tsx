@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Wrench, Truck, DollarSign } from 'lucide-react'
+import { Phone, Mail, Clock, Wrench, Truck, DollarSign } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -15,8 +15,7 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Mail, text: 'registratie@autodp.org', href: 'mailto:registratie@autodp.org' },
-    { icon: Phone, text: 'Service 24/7', href: 'tel:+32' },
-    { icon: MapPin, text: 'Service dans toute la Belgique', href: '#' }
+    { icon: Phone, text: 'Service 24/7', href: 'tel:+32' }
   ]
 
   return (

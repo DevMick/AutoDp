@@ -57,7 +57,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      info: 'contact@auto-dp.fr',
+      info: 'registratie@autodp.org',
       subinfo: 'Réponse sous 24h'
     }
   ]
