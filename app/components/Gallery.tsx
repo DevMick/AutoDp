@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { X, ZoomIn, Wrench, Truck, DollarSign } from 'lucide-react'
+import { X, ZoomIn, Wrench, Truck } from 'lucide-react'
 import Image from 'next/image'
 
 const Gallery = () => {
@@ -35,28 +35,6 @@ const Gallery = () => {
     setSelectedImage(null)
   }
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <section id="galerie" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -78,17 +56,14 @@ const Gallery = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {images.map((image, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
               whileHover={{ 
                 scale: 1.02,
                 transition: { duration: 0.3 }
@@ -140,57 +115,7 @@ const Gallery = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Modal */}
-        {selectedImage !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-            onClick={closeModal}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-4xl max-h-[90vh] w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={closeModal}
-                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
-              >
-                <X className="w-8 h-8" />
-              </button>
-
-              {/* Image */}
-              <div className="relative w-full h-[70vh] rounded-lg overflow-hidden">
-                <Image
-                  src={images[selectedImage].src}
-                  alt={images[selectedImage].alt}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Image Info */}
-              <div className="bg-white rounded-b-lg p-6">
-                <div className="flex items-center space-x-3 mb-2">
-                  <images[selectedImage].icon className="w-6 h-6 text-primary-600" />
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {images[selectedImage].title}
-                  </h3>
-                </div>
-                <p className="text-gray-600">
-                  {images[selectedImage].description}
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
+        </div>
       </div>
     </section>
   )
