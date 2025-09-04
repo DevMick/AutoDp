@@ -3,7 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Wrench, Truck, DollarSign } from 'lucide-react'
-import Image from 'next/image'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -34,21 +33,10 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="relative w-16 h-16">
-                <Image
-                  src="/Image 1.jpg"
-                  alt="Auto DP Logo"
-                  fill
-                  className="object-cover rounded-lg shadow-lg"
-                />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">
-                  Auto <span className="text-primary-400">DP</span>
-                </h3>
-                <p className="text-gray-300">Garage & Remorquage 24/7</p>
-              </div>
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold">
+                Auto <span className="text-primary-400">DP</span>
+              </h3>
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -105,17 +93,7 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Company Image */}
-            <div className="mt-6">
-              <div className="relative w-full h-32 rounded-lg overflow-hidden">
-                <Image
-                  src="/Image 2.jpg"
-                  alt="Auto DP - Garage et Remorquage"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            </div>
+
           </motion.div>
         </div>
       </div>
@@ -124,16 +102,9 @@ const Footer = () => {
       <div className="border-t border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} <span className="font-semibold text-white">Auto DP</span>. 
-              Tous droits réservés. Garage & Remorquage professionnel en Belgique.
-            </div>
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>Service 24/7</span>
-              <span>•</span>
-              <span>Intervention rapide</span>
-              <span>•</span>
-              <span>Devis gratuit</span>
+            <div className="text-gray-400 text-sm text-center">
+              © {currentYear} <span className="font-semibold text-white">Auto DP</span>.
+              Tous droits réservés.
             </div>
           </div>
         </div>

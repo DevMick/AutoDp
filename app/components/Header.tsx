@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react'
-import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,7 +18,6 @@ const Header = () => {
   const menuItems = [
     { name: 'Accueil', id: 'accueil' },
     { name: 'Services', id: 'services' },
-    { name: 'Galerie', id: 'galerie' },
     { name: 'Enregistrement', id: 'contact' },
     { name: 'Réception de Fond', id: 'fund-reception' },
   ]
@@ -27,24 +25,6 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Bar - Contact Info */}
-        <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-200">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-gray-600">
-              <Phone className="w-4 h-4" />
-              <span>24/7 Service</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-600">
-              <Mail className="w-4 h-4" />
-              <span>registratie@autodp.org</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-2 text-gray-600">
-            <MapPin className="w-4 h-4" />
-            <span>Service dans toute la Belgique</span>
-          </div>
-        </div>
-
         {/* Main Header */}
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -52,23 +32,11 @@ const Header = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center space-x-3"
+            className="flex items-center"
           >
-            <div className="relative w-12 h-12 sm:w-16 sm:h-16">
-              <Image
-                src="/Image 1.jpg"
-                alt="Auto DP Logo"
-                fill
-                className="object-cover rounded-lg shadow-md"
-                priority
-              />
-            </div>
-            <div>
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
-                Auto <span className="text-primary-600">DP</span>
-              </h1>
-              <p className="text-xs sm:text-sm text-gray-600">Garage & Remorquage 24/7</p>
-            </div>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+              Auto <span className="text-primary-600">DP</span>
+            </h1>
           </motion.div>
 
           {/* Desktop Navigation */}
