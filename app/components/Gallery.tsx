@@ -55,7 +55,7 @@ const Gallery = () => {
         ease: "easeOut"
       }
     }
-  }
+  };
 
   return (
     <section id="galerie" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gray-50">
