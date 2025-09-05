@@ -109,7 +109,7 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Informations importantes
+                Belangrijke informatie
               </h3>
               
               <div className="grid gap-6">
@@ -145,10 +145,10 @@ const Contact = () => {
             >
               <h4 className="text-xl font-bold mb-2 flex items-center">
                 <Phone className="w-6 h-6 mr-2" />
-                Urgence Remorquage
+                Noodtakeldienst
               </h4>
               <p className="text-red-100 mb-4">
-                Panne, accident ou problème mécanique ? Nous intervenons 24h/24 et 7j/7 partout en Belgique.
+                Panne, ongeval of mechanisch probleem? Wij komen 24u/24 en 7d/7 overal in België tussenbeide.
               </p>
             </motion.div>
           </motion.div>

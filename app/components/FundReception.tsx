@@ -109,7 +109,7 @@ const FundReception = () => {
           >
             <div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Informations importantes
+                Belangrijke informatie
               </h3>
               
               <div className="grid gap-6">
