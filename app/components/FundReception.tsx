@@ -74,7 +74,7 @@ const FundReception = () => {
       icon: Mail,
       title: 'Email',
       info: 'registratie@autodp.org',
-      subinfo: 'Réponse sous 24h'
+      subinfo: 'Antwoord binnen 24u'
     }
   ]
 
@@ -186,20 +186,20 @@ const FundReception = () => {
               {/* Nom complet */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Nom complet *
+                  Volledige naam *
                 </label>
                 <input
                   type="text"
-                  {...register('nom_complet', { required: 'Le nom complet est obligatoire' })}
+                  {...register('nom_complet', { required: 'Volledige naam is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.nom_complet ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Votre nom complet"
+                  placeholder="Uw volledige naam"
                 />
                 {errors.nom_complet && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.nom_complet?.message || 'Ce champ est requis')}
+                    {String(errors.nom_complet?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -213,32 +213,32 @@ const FundReception = () => {
                   <input
                     type="email"
                     {...register('email', { 
-                      required: 'L\'email est obligatoire',
+                      required: 'Email is verplicht',
                       pattern: {
                         value: /^\S+@\S+$/i,
-                        message: 'Email invalide'
+                        message: 'Ongeldig email'
                       }
                     })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
-                    placeholder="votre@email.com"
+                    placeholder="uw@email.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.email?.message || 'Ce champ est requis')}
+                      {String(errors.email?.message || 'Dit veld is verplicht')}
                     </p>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Téléphone *
+                    Telefoon *
                   </label>
                   <input
                     type="tel"
-                    {...register('telephone', { required: 'Le téléphone est obligatoire' })}
+                    {...register('telephone', { required: 'Telefoon is verplicht' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.telephone ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -256,7 +256,7 @@ const FundReception = () => {
               {/* Adresse de récupération */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Adresse de récupération *
+                  Ophaaladres *
                 </label>
                 <input
                   type="text"
@@ -277,7 +277,7 @@ const FundReception = () => {
               {/* Numéro de carte BE */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Numéro de carte BE *
+                  BE kaartnummer *
                 </label>
                 <input
                   type="text"
@@ -299,7 +299,7 @@ const FundReception = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Numéro de carte 52/49/51 *
+                    Kaartnummer 52/49/51 *
                   </label>
                   <input
                     type="text"
@@ -319,7 +319,7 @@ const FundReception = () => {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Date d'expiration *
+                    Vervaldatum *
                   </label>
                   <input
                     type="text"
@@ -346,7 +346,7 @@ const FundReception = () => {
               {/* Montant */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Montant à recevoir *
+                  Te ontvangen bedrag *
                 </label>
                 <input
                   type="number"
@@ -380,19 +380,19 @@ const FundReception = () => {
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Enregistrement en cours...</span>
+                    <span>Registratie bezig...</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Envoyer la demande</span>
+                    <span>Aanvraag verzenden</span>
                   </>
                 )}
               </motion.button>
             </form>
 
             <p className="text-sm text-gray-600 mt-4 text-center">
-              * Champs obligatoires. Vos données sont protégées et ne seront jamais partagées.
+              * Verplichte velden. Uw gegevens zijn beschermd en zullen nooit worden gedeeld.
             </p>
           </motion.div>
         </div>

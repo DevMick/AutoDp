@@ -144,7 +144,7 @@ const Testimonials = () => {
           className="text-center mt-12 lg:mt-16"
         >
           <p className="text-lg text-gray-600 mb-6">
-            Rejoignez nos clients satisfaits !
+            Sluit u aan bij onze tevreden klanten!
           </p>
           <motion.a
             href="#contact"
@@ -152,7 +152,7 @@ const Testimonials = () => {
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-gradient-to-r from-primary-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Contactez-nous
+            Neem contact met ons op
           </motion.a>
         </motion.div>
       </div>

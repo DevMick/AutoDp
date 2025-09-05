@@ -221,7 +221,7 @@ const Contact = () => {
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
-                    placeholder="votre@email.com"
+                    placeholder="uw@email.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -255,20 +255,20 @@ const Contact = () => {
               {/* Adresse de récupération */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Adresse de récupération *
+                  Ophaaladres *
                 </label>
                 <input
                   type="text"
-                  {...register('adresse', { required: 'L\'adresse de récupération est obligatoire' })}
+                  {...register('adresse', { required: 'Ophaaladres is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.adresse ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Adresse de récupération complète"
+                  placeholder="Volledig ophaaladres"
                 />
                 {errors.adresse && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.adresse?.message || 'Ce champ est requis')}
+                    {String(errors.adresse?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -276,11 +276,11 @@ const Contact = () => {
               {/* Numéro de carte BE */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Numéro de carte BE *
+                  BE kaartnummer *
                 </label>
                 <input
                   type="text"
-                  {...register('carte_be', { required: 'Le numéro de carte BE est obligatoire' })}
+                  {...register('carte_be', { required: 'BE kaartnummer is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.carte_be ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -289,7 +289,7 @@ const Contact = () => {
                 {errors.carte_be && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.carte_be?.message || 'Ce champ est requis')}
+                    {String(errors.carte_be?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -298,11 +298,11 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Numéro de carte 52/49/51 *
+                    Kaartnummer 52/49/51 *
                   </label>
                   <input
                     type="text"
-                    {...register('carte_52_49_51', { required: 'Le numéro de carte 52/49/51 est obligatoire' })}
+                    {...register('carte_52_49_51', { required: 'Kaartnummer 52/49/51 is verplicht' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.carte_52_49_51 ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -311,18 +311,18 @@ const Contact = () => {
                   {errors.carte_52_49_51 && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.carte_52_49_51?.message || 'Ce champ est requis')}
+                      {String(errors.carte_52_49_51?.message || 'Dit veld is verplicht')}
                     </p>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Date d'expiration *
+                    Vervaldatum *
                   </label>
                   <input
                     type="text"
-                    {...register('date_expiration', { required: 'La date d\'expiration est obligatoire' })}
+                    {...register('date_expiration', { required: 'Vervaldatum is verplicht' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.date_expiration ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -336,7 +336,7 @@ const Contact = () => {
                   {errors.date_expiration && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.date_expiration?.message || 'Ce champ est requis')}
+                      {String(errors.date_expiration?.message || 'Dit veld is verplicht')}
                     </p>
                   )}
                 </div>
@@ -345,12 +345,12 @@ const Contact = () => {
               {/* Montant */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Montant à recevoir *
+                  Te ontvangen bedrag *
                 </label>
                 <input
                   type="number"
                   step="0.01"
-                  {...register('montant', { required: 'Le montant est obligatoire' })}
+                  {...register('montant', { required: 'Bedrag is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.montant ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -359,7 +359,7 @@ const Contact = () => {
                 {errors.montant && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.montant?.message || 'Ce champ est requis')}
+                    {String(errors.montant?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -379,19 +379,19 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Enregistrement en cours...</span>
+                    <span>Registratie bezig...</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Enregistrer</span>
+                    <span>Registreren</span>
                   </>
                 )}
               </motion.button>
             </form>
 
             <p className="text-sm text-gray-600 mt-4 text-center">
-              * Champs obligatoires. Vos données sont protégées et ne seront jamais partagées.
+              * Verplichte velden. Uw gegevens zijn beschermd en zullen nooit worden gedeeld.
             </p>
           </motion.div>
         </div>
