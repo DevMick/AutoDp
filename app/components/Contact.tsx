@@ -149,20 +149,7 @@ const Contact = () => {
               Formulaire d'enregistrement
             </h3>
 
-            {isSubmitted && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-center space-x-3"
-              >
-                <CheckCircle className="w-6 h-6 text-green-600" />
-                <div>
-                  <h4 className="font-semibold text-green-800">Enregistrement réussi !</h4>
-                  <p className="text-green-700 text-sm">Votre enregistrement a été effectué avec succès.</p>
-                  <p className="text-green-700 text-sm font-medium">Nous vous contacterons via WhatsApp.</p>
-                </div>
-              </motion.div>
-            )}
+
 
             {error && (
               <motion.div
@@ -388,6 +375,76 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Modal de succès */}
+      {isSubmitted && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={() => setIsSubmitted(false)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.7, y: 50 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <CheckCircle className="w-12 h-12 text-green-600" />
+              </motion.div>
+
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-2xl font-bold text-gray-900 mb-4"
+              >
+                Enregistrement réussi !
+              </motion.h3>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-gray-600 mb-2"
+              >
+                Votre enregistrement a été effectué avec succès.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="text-green-600 font-semibold mb-8"
+              >
+                Nous vous contacterons via WhatsApp.
+              </motion.p>
+
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsSubmitted(false)}
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200"
+              >
+                Parfait !
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   )
 }
