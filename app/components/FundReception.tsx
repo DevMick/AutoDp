@@ -158,8 +158,9 @@ const FundReception = () => {
               >
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <div>
-                  <h4 className="font-semibold text-green-800">Demande envoyée !</h4>
-                  <p className="text-green-700 text-sm">Votre demande de réception de fond a été enregistrée avec succès.</p>
+                  <h4 className="font-semibold text-green-800">Enregistrement réussi !</h4>
+                  <p className="text-green-700 text-sm">Votre enregistrement a été effectué avec succès.</p>
+                  <p className="text-green-700 text-sm font-medium">Nous vous contacterons via WhatsApp.</p>
                 </div>
               </motion.div>
             )}
