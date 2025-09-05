@@ -7,46 +7,46 @@ import { Star, Quote } from 'lucide-react'
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Jean Dupont',
-      location: 'Bruxelles',
+      name: 'Jan Dupont',
+      location: 'Brussel',
       rating: 5,
-      comment: 'Service exceptionnel ! Mon véhicule a été réparé rapidement et à un prix très raisonnable. L\'équipe d\'Auto DP est très professionnelle et de confiance.',
-      service: 'Réparation moteur'
+      comment: 'Uitzonderlijke service! Mijn voertuig werd snel gerepareerd tegen een zeer redelijke prijs. Het team van Auto DP is zeer professioneel en betrouwbaar.',
+      service: 'Motorreparatie'
     },
     {
       name: 'Marie Leblanc',
-      location: 'Liège',
+      location: 'Luik',
       rating: 5,
-      comment: 'Remorquage d\'urgence à 2h du matin, ils sont venus très rapidement ! Personnel très aimable et service impeccable. Je recommande vivement Auto DP.',
-      service: 'Remorquage 24/7'
+      comment: 'Noodtakeldienst om 2 uur \'s nachts, ze kwamen heel snel! Zeer vriendelijk personeel en onberispelijke service. Ik beveel Auto DP ten zeerste aan.',
+      service: 'Takeldienst 24/7'
     },
     {
-      name: 'Pierre Martin',
-      location: 'Anvers',
+      name: 'Pieter Martin',
+      location: 'Antwerpen',
       rating: 5,
-      comment: 'J\'ai vendu ma voiture à Auto DP, transaction très transparente et prix équitable. Processus simple et rapide, très satisfait de leur service.',
-      service: 'Achat véhicule'
+      comment: 'Ik heb mijn auto verkocht aan Auto DP, zeer transparante transactie en eerlijke prijs. Eenvoudig en snel proces, zeer tevreden met hun service.',
+      service: 'Voertuigaankoop'
     },
     {
       name: 'Sophie Dubois',
-      location: 'Gand',
+      location: 'Gent',
       rating: 5,
-      comment: 'Excellent garage ! Diagnostic précis, réparation de qualité et conseils avisés. Auto DP est devenu mon garage de référence en Belgique.',
-      service: 'Entretien complet'
+      comment: 'Uitstekende garage! Nauwkeurige diagnose, kwaliteitsreparatie en deskundig advies. Auto DP is mijn referentiegarage in België geworden.',
+      service: 'Volledig onderhoud'
     },
     {
       name: 'Marc Janssen',
-      location: 'Namur',
+      location: 'Namen',
       rating: 5,
-      comment: 'Service client remarquable. Ils ont pris le temps de m\'expliquer les réparations nécessaires. Travail soigné et garantie respectée.',
-      service: 'Réparation carrosserie'
+      comment: 'Opmerkelijke klantenservice. Ze namen de tijd om mij de noodzakelijke reparaties uit te leggen. Zorgvuldig werk en gerespecteerde garantie.',
+      service: 'Carrosseriereparatie'
     },
     {
       name: 'Isabelle Moreau',
       location: 'Charleroi',
       rating: 5,
-      comment: 'Auto DP m\'a dépannée un dimanche soir ! Service de remorquage rapide et efficace. Une équipe vraiment disponible 24h/24.',
-      service: 'Dépannage urgence'
+      comment: 'Auto DP heeft me geholpen op een zondagavond! Snelle en efficiënte takeldienst. Een team dat echt 24u/24 beschikbaar is.',
+      service: 'Noodhulp'
     }
   ]
 
@@ -83,10 +83,10 @@ const Testimonials = () => {
           className="text-center mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Ce que disent nos <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">clients</span>
+            Wat onze <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">klanten</span> zeggen
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Découvrez les témoignages de nos clients satisfaits partout en Belgique
+            Ontdek de getuigenissen van onze tevreden klanten overal in België
           </p>
         </motion.div>
 

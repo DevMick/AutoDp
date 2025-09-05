@@ -45,7 +45,7 @@ const Hero = () => {
             className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 mb-8"
           >
             <Wrench className="w-5 h-5 text-green-400 mr-2" />
-            <span className="text-white font-medium">Service de confiance</span>
+            <span className="text-white font-medium">Betrouwbare service</span>
           </motion.div>
 
           {/* Titre principal */}
@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Un service <span className="text-white font-semibold">rapide</span>, <span className="text-white font-semibold">transparent</span> et <span className="text-white font-semibold">de confiance</span> pour tous vos besoins automobiles
+            Een <span className="text-white font-semibold">snelle</span>, <span className="text-white font-semibold">transparante</span> en <span className="text-white font-semibold">betrouwbare</span> service voor al uw automobielbehoeften
           </motion.p>
 
           {/* Statistiques */}
@@ -86,14 +86,14 @@ const Hero = () => {
               <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center mr-2">
                 <span className="text-xs text-black">★</span>
               </div>
-              <span className="text-sm sm:text-base font-medium">+500 clients satisfaits</span>
+              <span className="text-sm sm:text-base font-medium">+500 tevreden klanten</span>
             </div>
 
             <div className="flex items-center">
               <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-2">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
-              <span className="text-sm sm:text-base font-medium">Garantie qualité</span>
+              <span className="text-sm sm:text-base font-medium">Kwaliteitsgarantie</span>
             </div>
           </motion.div>
 
@@ -110,7 +110,7 @@ const Hero = () => {
               onClick={scrollToContact}
               className="bg-gradient-to-r from-primary-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
             >
-              Enregistrement
+              Registratie
             </motion.button>
 
             <motion.button
@@ -119,7 +119,7 @@ const Hero = () => {
               onClick={scrollToFundReception}
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 w-full sm:w-auto"
             >
-              Réception de Fond
+              Fondsreceptie
             </motion.button>
           </motion.div>
 

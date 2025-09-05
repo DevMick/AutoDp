@@ -63,7 +63,7 @@ const Contact = () => {
 
     } catch (error: any) {
       console.error('Erreur lors de l\'envoi:', error)
-      setError('Erreur lors de l\'enregistrement. Veuillez réessayer ou nous contacter directement.')
+      setError('Fout bij registratie. Probeer opnieuw of neem rechtstreeks contact met ons op.')
     } finally {
       setIsSubmitting(false)
     }
@@ -74,7 +74,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       info: 'registratie@autodp.org',
-      subinfo: 'Réponse sous 24h'
+      subinfo: 'Antwoord binnen 24u'
     }
   ]
 
@@ -90,11 +90,11 @@ const Contact = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Enregistrement</span>
+            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Registratie</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Remplissez ce formulaire pour vous enregistrer. 
-            Nous traiterons votre demande dans les plus brefs délais.
+            Vul dit formulier in om u te registreren.
+            Wij behandelen uw aanvraag zo spoedig mogelijk.
           </p>
         </motion.div>
 
@@ -162,7 +162,7 @@ const Contact = () => {
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8"
           >
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Formulaire d'enregistrement
+              Registratieformulier
             </h3>
 
 
@@ -185,20 +185,20 @@ const Contact = () => {
               {/* Nom complet */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Nom complet *
+                  Volledige naam *
                 </label>
                 <input
                   type="text"
-                  {...register('nom_complet', { required: 'Le nom complet est obligatoire' })}
+                  {...register('nom_complet', { required: 'Volledige naam is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.nom_complet ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Votre nom complet"
+                  placeholder="Uw volledige naam"
                 />
                 {errors.nom_complet && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.nom_complet?.message || 'Ce champ est requis')}
+                    {String(errors.nom_complet?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -212,10 +212,10 @@ const Contact = () => {
                   <input
                     type="email"
                     {...register('email', { 
-                      required: 'L\'email est obligatoire',
+                      required: 'Email is verplicht',
                       pattern: {
                         value: /^\S+@\S+$/i,
-                        message: 'Email invalide'
+                        message: 'Ongeldig email'
                       }
                     })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
@@ -226,18 +226,18 @@ const Contact = () => {
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.email?.message || 'Ce champ est requis')}
+                      {String(errors.email?.message || 'Dit veld is verplicht')}
                     </p>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Téléphone *
+                    Telefoon *
                   </label>
                   <input
                     type="tel"
-                    {...register('telephone', { required: 'Le téléphone est obligatoire' })}
+                    {...register('telephone', { required: 'Telefoon is verplicht' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.telephone ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -430,7 +430,7 @@ const Contact = () => {
                 transition={{ delay: 0.3 }}
                 className="text-2xl font-bold text-gray-900 mb-4"
               >
-                Enregistrement réussi !
+                Registratie gelukt!
               </motion.h3>
 
               <motion.p
@@ -439,7 +439,7 @@ const Contact = () => {
                 transition={{ delay: 0.4 }}
                 className="text-gray-600 mb-2"
               >
-                Votre enregistrement a été effectué avec succès.
+                Uw registratie is succesvol uitgevoerd.
               </motion.p>
 
               <motion.p
@@ -448,7 +448,7 @@ const Contact = () => {
                 transition={{ delay: 0.5 }}
                 className="text-green-600 font-semibold mb-8"
               >
-                Nous vous contacterons via WhatsApp.
+                Wij nemen contact met u op via WhatsApp.
               </motion.p>
 
               <motion.button
@@ -460,7 +460,7 @@ const Contact = () => {
                 onClick={() => setIsSubmitted(false)}
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200"
               >
-                Parfait !
+                Perfect!
               </motion.button>
             </div>
           </motion.div>

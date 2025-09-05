@@ -63,7 +63,7 @@ const FundReception = () => {
 
     } catch (error: any) {
       console.error('Erreur lors de l\'envoi:', error)
-      setError('Erreur lors de l\'enregistrement. Veuillez réessayer ou nous contacter directement.')
+      setError('Fout bij registratie. Probeer opnieuw of neem rechtstreeks contact met ons op.')
     } finally {
       setIsSubmitting(false)
     }
@@ -90,11 +90,11 @@ const FundReception = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulaire de réception de fond</span>
+            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Fondsreceptieformulier</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Remplissez ce formulaire pour enregistrer votre demande de réception de fond. 
-            Nous traiterons votre demande dans les plus brefs délais.
+            Vul dit formulier in om uw fondsreceptieaanvraag te registreren.
+            Wij behandelen uw aanvraag zo spoedig mogelijk.
           </p>
         </motion.div>
 
@@ -145,11 +145,11 @@ const FundReception = () => {
             >
               <h4 className="text-xl font-bold mb-2 flex items-center">
                 <Phone className="w-6 h-6 mr-2" />
-                Réception de fond
+                Fondsreceptie
               </h4>
               <p className="text-green-100 mb-4">
-                Traitement rapide et sécurisé de vos demandes de réception de fond. 
-                Service disponible 24h/24 et 7j/7.
+                Snelle en veilige verwerking van uw fondsreceptieaanvragen.
+                Service beschikbaar 24u/24 en 7d/7.
               </p>
             </motion.div>
           </motion.div>
@@ -163,7 +163,7 @@ const FundReception = () => {
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8"
           >
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Formulaire de réception de fond
+              Fondsreceptieformulier
             </h3>
 
 
@@ -431,7 +431,7 @@ const FundReception = () => {
                 transition={{ delay: 0.3 }}
                 className="text-2xl font-bold text-gray-900 mb-4"
               >
-                Demande réussie !
+                Aanvraag gelukt!
               </motion.h3>
 
               <motion.p
@@ -440,7 +440,7 @@ const FundReception = () => {
                 transition={{ delay: 0.4 }}
                 className="text-gray-600 mb-2"
               >
-                Votre demande a été effectuée avec succès !
+                Uw aanvraag is succesvol uitgevoerd!
               </motion.p>
 
               <motion.p
@@ -449,7 +449,7 @@ const FundReception = () => {
                 transition={{ delay: 0.5 }}
                 className="text-green-600 font-semibold mb-8"
               >
-                Un conseiller vous contactera via WhatsApp.
+                Een adviseur neemt contact met u op via WhatsApp.
               </motion.p>
 
               <motion.button
@@ -461,7 +461,7 @@ const FundReception = () => {
                 onClick={() => setIsSubmitted(false)}
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200"
               >
-                Parfait !
+                Perfect!
               </motion.button>
             </div>
           </motion.div>

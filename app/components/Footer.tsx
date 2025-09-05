@@ -8,9 +8,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const services = [
-    { icon: Wrench, name: 'Garage Mécanique', desc: 'Réparations et entretien' },
-    { icon: Truck, name: 'Remorquage 24/7', desc: 'Service d\'urgence' },
-    { icon: DollarSign, name: 'Achat de Véhicules', desc: 'Rachat au meilleur prix' }
+    { icon: Wrench, name: 'Garage Mechaniek', desc: 'Reparaties en onderhoud' },
+    { icon: Truck, name: 'Takeldienst 24/7', desc: 'Spoeddienst' },
+    { icon: DollarSign, name: 'Aankoop Voertuigen', desc: 'Aankoop tegen beste prijs' }
   ]
 
   const contactInfo = [
@@ -39,14 +39,14 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              <strong>Auto DP</strong> est votre partenaire de confiance pour tous vos besoins automobiles. 
-              Nous offrons des services de garage professionnel, de remorquage d'urgence 24/7, 
-              et nous rachetons également des véhicules pour les particuliers au meilleur prix.
+              <strong>Auto DP</strong> is uw betrouwbare partner voor al uw automobielbehoeften.
+              Wij bieden professionele garagediensten, 24/7 noodtakeldiensten,
+              en wij kopen ook voertuigen van particulieren tegen de beste prijs.
             </p>
 
             <div className="flex items-center space-x-2 text-primary-400">
               <Clock className="w-5 h-5" />
-              <span className="font-semibold">Service disponible 24h/24 - 7j/7</span>
+              <span className="font-semibold">Service beschikbaar 24u/24 - 7d/7</span>
             </div>
           </motion.div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-xl font-bold mb-6 text-primary-400">Nos Services</h4>
+            <h4 className="text-xl font-bold mb-6 text-primary-400">Onze Diensten</h4>
             <div className="space-y-4">
               {services.map((service, index) => (
                 <div key={index} className="flex items-start space-x-3">
@@ -103,7 +103,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm text-center">
               © {currentYear} <span className="font-semibold text-white">Auto DP</span>.
-              Tous droits réservés.
+              Alle rechten voorbehouden.
             </div>
           </div>
         </div>

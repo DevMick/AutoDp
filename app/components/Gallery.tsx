@@ -9,50 +9,50 @@ const Gallery = () => {
   const images = [
     {
       src: '/Atelier Professionnel.jpg',
-      alt: 'Auto DP - Atelier de réparation moderne',
-      title: 'Atelier Professionnel',
-      description: 'Notre atelier équipé des dernières technologies pour tous types de réparations',
+      alt: 'Auto DP - Moderne reparatiewerkplaats',
+      title: 'Professionele Werkplaats',
+      description: 'Onze werkplaats uitgerust met de nieuwste technologieën voor alle soorten reparaties',
       category: 'Garage',
       icon: Wrench
     },
     {
       src: '/Image 2.jpg',
-      alt: 'Auto DP - Service de remorquage',
-      title: 'Remorquage 24/7',
-      description: 'Service de remorquage disponible 24h/24 et 7j/7 partout en Belgique',
-      category: 'Remorquage',
+      alt: 'Auto DP - Takeldienst',
+      title: 'Takeldienst 24/7',
+      description: 'Takeldienst beschikbaar 24u/24 en 7d/7 overal in België',
+      category: 'Takeldienst',
       icon: Truck
     },
     {
       src: '/Diagnostic Avancé.jpg',
-      alt: 'Auto DP - Diagnostic automobile',
-      title: 'Diagnostic Avancé',
-      description: 'Équipements de diagnostic de pointe pour identifier précisément les problèmes',
+      alt: 'Auto DP - Autodiagnose',
+      title: 'Geavanceerde Diagnose',
+      description: 'Geavanceerde diagnoseapparatuur om problemen nauwkeurig te identificeren',
       category: 'Garage',
       icon: Wrench
     },
     {
       src: '/Achat de Véhicules.jpg',
-      alt: 'Auto DP - Véhicules rachetés',
-      title: 'Achat de Véhicules',
-      description: 'Nous rachetons vos véhicules au meilleur prix, évaluation gratuite',
-      category: 'Achat',
+      alt: 'Auto DP - Aangekochte voertuigen',
+      title: 'Aankoop Voertuigen',
+      description: 'Wij kopen uw voertuigen tegen de beste prijs, gratis evaluatie',
+      category: 'Aankoop',
       icon: Car
     },
     {
       src: '/Réparation Moteur.jpg',
-      alt: 'Auto DP - Réparation moteur',
-      title: 'Réparation Moteur',
-      description: 'Spécialistes en réparation et révision de moteurs toutes marques',
+      alt: 'Auto DP - Motorreparatie',
+      title: 'Motorreparatie',
+      description: 'Specialisten in reparatie en revisie van motoren van alle merken',
       category: 'Garage',
       icon: Wrench
     },
     {
       src: '/Équipe Experte.jpg',
-      alt: 'Auto DP - Équipe professionnelle',
-      title: 'Équipe Experte',
-      description: 'Une équipe de mécaniciens qualifiés avec plus de 10 ans d\'expérience',
-      category: 'Équipe',
+      alt: 'Auto DP - Professioneel team',
+      title: 'Expert Team',
+      description: 'Een team van gekwalificeerde monteurs met meer dan 10 jaar ervaring',
+      category: 'Team',
       icon: Wrench
     }
   ]
@@ -69,10 +69,10 @@ const Gallery = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Notre <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Galerie</span>
+            Onze <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Galerij</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Découvrez nos installations, notre équipe et nos services en images
+            Ontdek onze installaties, ons team en onze diensten in beelden
           </p>
         </motion.div>
 

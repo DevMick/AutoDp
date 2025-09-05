@@ -6,9 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://autodp.org'),
-  title: 'Auto DP - Garage & Remorquage 24/7',
-  description: 'Auto DP - Votre partenaire de confiance pour le garage, remorquage 24/7 et achat de véhicules en Belgique',
-  keywords: 'garage, remorquage, auto, véhicules, belgique, 24/7, réparation, entretien, achat voiture',
+  title: 'Auto DP - Garage & Takeldienst 24/7',
+  description: 'Auto DP - Uw betrouwbare partner voor garage, takeldienst 24/7 en aankoop van voertuigen in België',
+  keywords: 'garage, takeldienst, auto, voertuigen, belgië, 24/7, reparatie, onderhoud, auto kopen',
   authors: [{ name: 'Auto DP' }],
   creator: 'Auto DP',
   publisher: 'Auto DP',
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     apple: '/favicon.svg'
   },
   openGraph: {
-    title: 'Auto DP - Garage & Remorquage 24/7',
-    description: 'Votre partenaire de confiance pour le garage, remorquage 24/7 et achat de véhicules en Belgique',
+    title: 'Auto DP - Garage & Takeldienst 24/7',
+    description: 'Uw betrouwbare partner voor garage, takeldienst 24/7 en aankoop van voertuigen in België',
     type: 'website',
-    locale: 'fr_BE',
+    locale: 'nl_BE',
     siteName: 'Auto DP'
   },
   twitter: {
     card: 'summary',
-    title: 'Auto DP - Garage & Remorquage 24/7',
-    description: 'Votre partenaire de confiance pour le garage, remorquage 24/7 et achat de véhicules en Belgique'
+    title: 'Auto DP - Garage & Takeldienst 24/7',
+    description: 'Uw betrouwbare partner voor garage, takeldienst 24/7 en aankoop van voertuigen in België'
   }
 }
 
@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="nl">
       <body className={inter.className}>{children}</body>
     </html>
   )

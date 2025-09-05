@@ -8,31 +8,31 @@ const Services = () => {
   const services = [
     {
       icon: Wrench,
-      title: 'Garage Mécanique',
-      description: 'Réparations et entretien complets de tous types de véhicules avec des équipements de pointe.',
-      features: ['Diagnostic électronique', 'Réparations moteur', 'Entretien préventif', 'Pièces d\'origine'],
+      title: 'Garage Mechaniek',
+      description: 'Volledige reparaties en onderhoud van alle soorten voertuigen met geavanceerde apparatuur.',
+      features: ['Elektronische diagnose', 'Motorreparaties', 'Preventief onderhoud', 'Originele onderdelen'],
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Truck,
-      title: 'Remorquage 24/7',
-      description: 'Service d\'urgence disponible 24h/24 et 7j/7 dans toute la Belgique avec intervention rapide.',
-      features: ['Intervention 24/7', 'Toute la Belgique', 'Équipe professionnelle', 'Tarifs transparents'],
+      title: 'Takeldienst 24/7',
+      description: 'Spoeddienst beschikbaar 24u/24 en 7d/7 in heel België met snelle interventie.',
+      features: ['Interventie 24/7', 'Heel België', 'Professioneel team', 'Transparante tarieven'],
       color: 'from-red-500 to-red-600'
     },
     {
       icon: DollarSign,
-      title: 'Achat de Véhicules',
-      description: 'Rachat de véhicules pour particuliers au meilleur prix avec évaluation gratuite et paiement immédiat.',
-      features: ['Évaluation gratuite', 'Meilleur prix garanti', 'Paiement immédiat', 'Démarches simplifiées'],
+      title: 'Aankoop Voertuigen',
+      description: 'Aankoop van voertuigen voor particulieren tegen de beste prijs met gratis evaluatie en onmiddellijke betaling.',
+      features: ['Gratis evaluatie', 'Beste prijs gegarandeerd', 'Onmiddellijke betaling', 'Vereenvoudigde procedures'],
       color: 'from-green-500 to-green-600'
     }
   ]
 
   const stats = [
-    { number: '24/7', label: 'Service disponible', icon: Clock },
-    { number: '500+', label: 'Clients satisfaits', icon: Star },
-    { number: '100%', label: 'Garantie qualité', icon: Shield }
+    { number: '24/7', label: 'Service beschikbaar', icon: Clock },
+    { number: '500+', label: 'Tevreden klanten', icon: Star },
+    { number: '100%', label: 'Kwaliteitsgarantie', icon: Shield }
   ]
 
   const containerVariants = {
@@ -69,11 +69,11 @@ const Services = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Nos <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Services</span>
+            Onze <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Diensten</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Auto DP vous accompagne pour tous vos besoins automobiles avec des services professionnels 
-            et une expertise reconnue.
+            Auto DP begeleidt u voor al uw automobielbehoeften met professionele diensten
+            en erkende expertise.
           </p>
         </motion.div>
 

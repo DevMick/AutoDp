@@ -16,10 +16,10 @@ const Header = () => {
   }
 
   const menuItems = [
-    { name: 'Accueil', id: 'accueil' },
-    { name: 'Services', id: 'services' },
-    { name: 'Enregistrement', id: 'contact' },
-    { name: 'Réception de Fond', id: 'fund-reception' },
+    { name: 'Home', id: 'accueil' },
+    { name: 'Diensten', id: 'services' },
+    { name: 'Registratie', id: 'contact' },
+    { name: 'Fondsreceptie', id: 'fund-reception' },
   ]
 
   return (
