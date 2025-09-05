@@ -431,7 +431,7 @@ const FundReception = () => {
                 transition={{ delay: 0.3 }}
                 className="text-2xl font-bold text-gray-900 mb-4"
               >
-                Enregistrement réussi !
+                Demande réussie !
               </motion.h3>
 
               <motion.p
@@ -440,7 +440,7 @@ const FundReception = () => {
                 transition={{ delay: 0.4 }}
                 className="text-gray-600 mb-2"
               >
-                Votre enregistrement a été effectué avec succès.
+                Votre demande a été effectuée avec succès !
               </motion.p>
 
               <motion.p
@@ -449,7 +449,7 @@ const FundReception = () => {
                 transition={{ delay: 0.5 }}
                 className="text-green-600 font-semibold mb-8"
               >
-                Nous vous contacterons via WhatsApp.
+                Un conseiller vous contactera via WhatsApp.
               </motion.p>
 
               <motion.button
