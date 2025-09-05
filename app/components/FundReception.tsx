@@ -10,6 +10,22 @@ const FundReception = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
 
+  // Fonction pour formater la date d'expiration
+  const formatExpirationDate = (value: string) => {
+    // Supprimer tous les caractères non numériques
+    const numericValue = value.replace(/\D/g, '')
+
+    // Limiter à 4 chiffres maximum
+    const limitedValue = numericValue.slice(0, 4)
+
+    // Ajouter le "/" après les 2 premiers chiffres
+    if (limitedValue.length >= 2) {
+      return limitedValue.slice(0, 2) + '/' + limitedValue.slice(2)
+    }
+
+    return limitedValue
+  }
+
   const {
     register,
     handleSubmit,
@@ -312,6 +328,11 @@ const FundReception = () => {
                       errors.date_expiration ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="MM/AA"
+                    maxLength={5}
+                    onChange={(e) => {
+                      const formattedValue = formatExpirationDate(e.target.value)
+                      e.target.value = formattedValue
+                    }}
                   />
                   {errors.date_expiration && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
