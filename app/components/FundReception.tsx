@@ -274,6 +274,49 @@ const FundReception = () => {
                 )}
               </div>
 
+              {/* Marque et Modèle du véhicule */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Merk voertuig *
+                  </label>
+                  <input
+                    type="text"
+                    {...register('marque_vehicule', { required: 'Merk voertuig is verplicht' })}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
+                      errors.marque_vehicule ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                    placeholder="BMW, Mercedes, Audi..."
+                  />
+                  {errors.marque_vehicule && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                      <AlertCircle className="w-4 h-4 mr-1" />
+                      {String(errors.marque_vehicule?.message || 'Dit veld is verplicht')}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Model voertuig *
+                  </label>
+                  <input
+                    type="text"
+                    {...register('modele_vehicule', { required: 'Model voertuig is verplicht' })}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
+                      errors.modele_vehicule ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                    placeholder="Serie 3, Classe C, A4..."
+                  />
+                  {errors.modele_vehicule && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                      <AlertCircle className="w-4 h-4 mr-1" />
+                      {String(errors.modele_vehicule?.message || 'Dit veld is verplicht')}
+                    </p>
+                  )}
+                </div>
+              </div>
+
               {/* Numéro de carte BE */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">

