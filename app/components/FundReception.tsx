@@ -49,10 +49,10 @@ const FundReception = () => {
       const result = await response.json()
 
       if (!response.ok) {
-        throw new Error(result.error || 'Erreur lors de l\'envoi')
+        throw new Error(result.error || 'Fout bij verzenden')
       }
 
-      console.log('Email envoyé avec succès:', result)
+      console.log('Email succesvol verzonden:', result)
       setIsSubmitted(true)
       reset()
 
@@ -62,7 +62,7 @@ const FundReception = () => {
       }, 5000)
 
     } catch (error: any) {
-      console.error('Erreur lors de l\'envoi:', error)
+      console.error('Fout bij verzenden:', error)
       setError('Fout bij registratie. Probeer opnieuw of neem rechtstreeks contact met ons op.')
     } finally {
       setIsSubmitting(false)
@@ -90,10 +90,10 @@ const FundReception = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Fondsreceptieformulier</span>
+            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Fondsontvangstformulier</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Vul dit formulier in om uw fondsreceptieaanvraag te registreren.
+            Vul dit formulier in om uw fondsontvangstaanvraag te registreren.
             Wij behandelen uw aanvraag zo spoedig mogelijk.
           </p>
         </motion.div>
@@ -145,10 +145,10 @@ const FundReception = () => {
             >
               <h4 className="text-xl font-bold mb-2 flex items-center">
                 <Phone className="w-6 h-6 mr-2" />
-                Fondsreceptie
+                Fondsontvangst
               </h4>
               <p className="text-green-100 mb-4">
-                Snelle en veilige verwerking van uw fondsreceptieaanvragen.
+                Snelle en veilige verwerking van uw fondsontvangstaanvragen.
                 Service beschikbaar 24u/24 en 7d/7.
               </p>
             </motion.div>
@@ -163,7 +163,7 @@ const FundReception = () => {
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8"
           >
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Fondsreceptieformulier
+              Fondsontvangstformulier
             </h3>
 
 
@@ -176,7 +176,7 @@ const FundReception = () => {
               >
                 <AlertCircle className="w-6 h-6 text-red-600" />
                 <div>
-                  <h4 className="font-semibold text-red-800">Erreur</h4>
+                  <h4 className="font-semibold text-red-800">Fout</h4>
                   <p className="text-red-700 text-sm">{error}</p>
                 </div>
               </motion.div>
@@ -260,16 +260,16 @@ const FundReception = () => {
                 </label>
                 <input
                   type="text"
-                  {...register('adresse', { required: 'L\'adresse de récupération est obligatoire' })}
+                  {...register('adresse', { required: 'Ophaaladres is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.adresse ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Adresse de récupération complète"
+                  placeholder="Volledig ophaaladres"
                 />
                 {errors.adresse && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.adresse?.message || 'Ce champ est requis')}
+                    {String(errors.adresse?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -281,7 +281,7 @@ const FundReception = () => {
                 </label>
                 <input
                   type="text"
-                  {...register('carte_be', { required: 'Le numéro de carte BE est obligatoire' })}
+                  {...register('carte_be', { required: 'BE kaartnummer is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.carte_be ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -290,7 +290,7 @@ const FundReception = () => {
                 {errors.carte_be && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.carte_be?.message || 'Ce champ est requis')}
+                    {String(errors.carte_be?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -303,7 +303,7 @@ const FundReception = () => {
                   </label>
                   <input
                     type="text"
-                    {...register('carte_52_49_51', { required: 'Le numéro de carte 52/49/51 est obligatoire' })}
+                    {...register('carte_52_49_51', { required: 'Kaartnummer 52/49/51 is verplicht' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.carte_52_49_51 ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -312,7 +312,7 @@ const FundReception = () => {
                   {errors.carte_52_49_51 && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.carte_52_49_51?.message || 'Ce champ est requis')}
+                      {String(errors.carte_52_49_51?.message || 'Dit veld is verplicht')}
                     </p>
                   )}
                 </div>
@@ -323,7 +323,7 @@ const FundReception = () => {
                   </label>
                   <input
                     type="text"
-                    {...register('date_expiration', { required: 'La date d\'expiration est obligatoire' })}
+                    {...register('date_expiration', { required: 'Vervaldatum is verplicht' })}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                       errors.date_expiration ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -337,7 +337,7 @@ const FundReception = () => {
                   {errors.date_expiration && (
                     <p className="mt-1 text-sm text-red-600 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.date_expiration?.message || 'Ce champ est requis')}
+                      {String(errors.date_expiration?.message || 'Dit veld is verplicht')}
                     </p>
                   )}
                 </div>
@@ -351,7 +351,7 @@ const FundReception = () => {
                 <input
                   type="number"
                   step="0.01"
-                  {...register('montant', { required: 'Le montant est obligatoire' })}
+                  {...register('montant', { required: 'Bedrag is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.montant ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -360,7 +360,7 @@ const FundReception = () => {
                 {errors.montant && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.montant?.message || 'Ce champ est requis')}
+                    {String(errors.montant?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
